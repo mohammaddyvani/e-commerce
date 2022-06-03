@@ -1,0 +1,5 @@
+@extends('admin.layouts.partials.sidebar')
+
+@section('content')
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto unde sapiente aperiam assumenda, soluta quasi neque asperiores est error impedit quae eum odio porro, hic perspiciatis. Neque aliquid sint quidem itaque aliquam praesentium architecto, reprehenderit, ut minima quos explicabo aut voluptates perferendis ratione odit suscipit ab obcaecati facere modi dicta voluptatibus est sequi nam nulla? Laudantium aliquam praesentium facilis corrupti officiis magni, molestiae maxime magnam, autem ipsam tenetur adipisci nisi reprehenderit fugit voluptas eius natus fugiat libero asperiores nobis. Alias eveniet officia vero dolore! Beatae obcaecati fugit earum, aut nobis deleniti natus voluptates maxime consequuntur necessitatibus et vitae adipisci ullam.</p>
+@endsection
