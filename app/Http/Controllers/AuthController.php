@@ -53,7 +53,7 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         try {
-            Member::create($request->only(['name', 'phone', 'email','address']));
+            Member::create($request->only(['firstname', 'lastname', 'email','password', 'confirmpassword']));
 
             return response()([
                 'message' => 'success'
