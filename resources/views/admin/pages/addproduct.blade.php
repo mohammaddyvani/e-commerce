@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Stock</label>
-                                        <input type="number" name="stock" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ isset($products) ? $products->des_stock : '' }}">
+                                        <input type="number" name="stock" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ isset($products) ? $products->stock : '' }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Discount</label>
@@ -110,7 +110,6 @@
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Image</label>
                                         <input type="file" name="file" id="dropify">
-                                        {{-- <input type="text" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp value="{{ isset($products) ? $products->image : '' }}""> --}}
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -128,7 +127,7 @@
 
 @section('script')
 
-<script >
+<script>
     $(document).ready(function() {
         $('#dropify').dropify();
     });
