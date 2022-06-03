@@ -8,17 +8,26 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
                     <!-- Login Form s-->
-                    <form action="#">
+                    @if ($errors->any())
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{$errors->first()}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    <form action="{{route('auth.login')}}" method="post" >
+                        @csrf
                         <div class="login-form">
                             <h4 class="login-title">Login</h4>
                             <div class="row">
                                 <div class="col-md-12 col-12">
-                                    <label>Email Address*</label>
-                                    <input type="email" placeholder="Email Address">
+                                    <label>Username*</label>
+                                    <input type="text" placeholder="Username" name="username">
                                 </div>
                                 <div class="col-12 mb--20">
                                     <label>Password</label>
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" placeholder="Password" name="password">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="check-box">
@@ -39,7 +48,7 @@
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                    <form action="#">
+                    <form action="{{route('auth.register')}}" method="post">
                         <div class="login-form">
                             <h4 class="login-title">Register</h4>
                             <div class="row">

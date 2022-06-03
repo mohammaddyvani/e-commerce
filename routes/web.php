@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,11 @@ Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('
 // Route::get('/tabelproduk', function () {
 //     return view('admin.pages.tabelproduk');
 // });
+
+//auth
+Route::prefix('auth')->group(function (){
+    Route::get('/', [AuthController::class, 'index'])->name('auth');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});
