@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -19,48 +21,38 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required'
         ]);
 
         try {
-            $user = User::where('username', $request->username);
+            $user = User::where('email', $request->email);
 
             if ($user->count() > 0) {
-                if (Auth::attempt(['username' => $request->username, 'password' => $request->password]) ){
+                if (Auth::attempt(['email' => $request->email, 'password' => $request->password]) ){
                     $user = $user->first();
                     return redirect()->route('home');
                 } else {
-                    return redirect()->back()->withErrors(['message' => 'test']);
+                    return redirect()->back()->withErrors(['message' => 'Password salah']);
                 }
             } else {
-                return redirect()->back()->withErrors(['message' => 'test']);
+                return redirect()->back()->withErrors(['message' => 'Email tidak terdaftar']);
             }
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['message' => 'test']);
+            return redirect()->back()->withErrors(['message' => $e->getMessage()]);
         }
-    }
-
-    public function register()
-    {
-       $data = [
-           'title' => 'Register'
-       ];
-
-       return view('login', $data);
     }
 
     public function store(Request $request)
     {
         try {
-            Member::create($request->only(['firstname', 'lastname', 'email','password', 'confirmpassword']));
+            $request->merge(['name' => $request->firstname .' '. $request->lastname, 'password' => Hash::make($request->password), 'role_id' => 2]);
+            User::create($request->only(['name', 'role_id', 'email','password']));
 
-            return response()([
-                'message' => 'success'
-            ]);
+            return redirect()->route('auth');
         } catch(\Exception $e) {
-            return response()([
-                'message' => 'failed'
+            return response()->json([
+                'message' => $e->getMessage()
             ]);
         }
     }

@@ -704,24 +704,6 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/ap1.jpg" alt="Uren's Brand Image">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/ap2.jpg" alt="Uren's Brand Image">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <a href="javascript:void(0)">
                                             <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -731,7 +713,7 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
+                                            <img src="assets/images/brand/a2.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
                                 </div>
@@ -740,7 +722,7 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
+                                            <img src="assets/images/brand/a3.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
                                 </div>
@@ -749,7 +731,7 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
+                                            <img class="mt-2" src="assets/images/brand/a4.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
                                 </div>
@@ -758,7 +740,7 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
+                                            <img src="assets/images/brand/a5.jpg" alt="Uren's Brand Image" width="100px">
                                         </a>
                                     </div>
                                 </div>
@@ -767,7 +749,7 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
+                                            <img src="assets/images/brand/a6.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
                                 </div>
@@ -776,7 +758,16 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
+                                            <img class="mt-3" src="assets/images/brand/a7.jpg" alt="Uren's Brand Image">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="inner-slide">
+                                    <div class="single-product">
+                                        <a href="javascript:void(0)">
+                                            <img class="mt-3" src="assets/images/brand/a8.jpg" alt="Uren's Brand Image" width="120px">
                                         </a>
                                     </div>
                                 </div>

@@ -6,7 +6,7 @@
     @yield('content')
 
     <!-- Begin Uren's Footer Area -->
-    <div class="uren-footer_area">
+    <div class="uren-footer_area" style="margin-top: 50px;">
         <div class="footer-top_area">
             <div class="container-fluid">
                 <div class="row">
