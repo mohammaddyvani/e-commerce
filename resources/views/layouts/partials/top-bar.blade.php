@@ -78,8 +78,7 @@
                                 </li>
                                 <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
-                                        <li><a href="javascript:void(0)">Register</a></li>
-                                        <li class="active"><a href="javascript:void(0)">Login</a></li>
+                                        <li><a href="javascript:void(0)">Login</a></li>
                                     </ul>
                                 </li>
                             </ul>

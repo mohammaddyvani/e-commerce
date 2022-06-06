@@ -33,8 +33,8 @@ Route::get('/table', function () {
     return view('admin.pages.tabelProduk');
 });
 
-Route::get('/keranjang', function () {
-    return view('keranjang');
+Route::get('/cart', function () {
+    return view('cart');
 });
 
 Route::get('/detail', function () {
