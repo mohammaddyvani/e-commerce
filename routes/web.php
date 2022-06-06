@@ -29,6 +29,9 @@ Route::get('/error', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/table', function () {
+    return view('admin.pages.tabelProduk');
+});
 
 Route::get('/keranjang', function () {
     return view('keranjang');

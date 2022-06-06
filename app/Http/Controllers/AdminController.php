@@ -15,7 +15,7 @@ class AdminController extends Controller
             Brand::all(),
             'products' => Product::all(),
         ];
-        return view('admin.pages.dasboard', $data);
+        return view('admin.pages.dataproduct', $data);
     }
 
     public function addproduct(){
