@@ -80,6 +80,6 @@ Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('
 Route::prefix('auth')->group(function (){
     Route::get('/', [AuthController::class, 'index'])->name('auth');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-    Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::post('/register', [AuthController::class, 'store'])->name('auth.register');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
