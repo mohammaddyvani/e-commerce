@@ -60,8 +60,8 @@
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
                                     <ul>
-                                        <li>Subtotal <span>$118.60</span></li>
-                                        <li>Total <span>$118.60</span></li>
+                                        <li>Subtotal <span>Rp118.600.000</span></li>
+                                        <li>Total <span>Rp118.600.000</span></li>
                                     </ul>
                                     <a href="javascript:void(0)">Proceed to checkout</a>
                                 </div>

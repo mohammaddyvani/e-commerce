@@ -63,7 +63,11 @@
                                 </li>
                                 <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
+<<<<<<< HEAD
                                         <li><a href="/login">Login</a></li>
+=======
+                                        <li><a href="javascript:void(0)">Login</a></li>
+>>>>>>> c7ac9976a9705a0cdedb1aad7ae5aaf81891081a
                                     </ul>
                                 </li>
                             </ul>
@@ -377,38 +381,38 @@
                     <li class="minicart-product">
                         <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
                         <div class="product-item_img">
-                            <img src="assets/images/product/small-size/1.jpg" alt="Uren's Product Image">
+                            <img src="assets/images/product/product_apple_13mini.jpg" alt="Uren's Product Image">
                         </div>
                         <div class="product-item_content">
-                            <a class="product-item_title" href="shop-left-sidebar.html">Autem ipsa ad</a>
-                            <span class="product-item_quantity">1 x $145.80</span>
+                            <a class="product-item_title" href="shop-left-sidebar.html">IPhone 13 Mini</a>
+                            <span class="product-item_quantity">1 x Rp14.990,000</span>
                         </div>
                     </li>
                     <li class="minicart-product">
                         <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
                         <div class="product-item_img">
-                            <img src="assets/images/product/small-size/2.jpg" alt="Uren's Product Image">
+                            <img src="assets/images/product/product_apple_11pro.jpg" alt="Uren's Product Image">
                         </div>
                         <div class="product-item_content">
-                            <a class="product-item_title" href="shop-left-sidebar.html">Tenetur illum amet</a>
-                            <span class="product-item_quantity">1 x $150.80</span>
+                            <a class="product-item_title" href="shop-left-sidebar.html">IPhone 11 Pro</a>
+                            <span class="product-item_quantity">1 x Rp24.990.000</span>
                         </div>
                     </li>
                     <li class="minicart-product">
                         <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
                         <div class="product-item_img">
-                            <img src="assets/images/product/small-size/3.jpg" alt="Uren's Product Image">
+                            <img src="assets/images/product/product_apple_13.jpg" alt="Uren's Product Image">
                         </div>
                         <div class="product-item_content">
-                            <a class="product-item_title" href="shop-left-sidebar.html">Non doloremque placeat</a>
-                            <span class="product-item_quantity">1 x $165.80</span>
+                            <a class="product-item_title" href="shop-left-sidebar.html">IPhone 13</a>
+                            <span class="product-item_quantity">1 x Rp2.899.000</span>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="minicart-item_total">
                 <span>Subtotal</span>
-                <span class="ammount">$462.4‬0</span>
+                <span class="ammount">Rp45.000.00‬0</span>
             </div>
             <div class="minicart-btn_area">
                 <a href="cart.html" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>

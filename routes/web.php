@@ -33,8 +33,8 @@ Route::get('/login', function () {
 //     return view('admin.pages.datauser');
 // });
 
-Route::get('/keranjang', function () {
-    return view('keranjang');
+Route::get('/cart', function () {
+    return view('cart');
 });
 
 Route::get('/detail', function () {
