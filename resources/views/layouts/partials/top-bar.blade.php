@@ -63,11 +63,7 @@
                                 </li>
                                 <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
-<<<<<<< HEAD
                                         <li><a href="/login">Login</a></li>
-=======
-                                        <li><a href="javascript:void(0)">Login</a></li>
->>>>>>> c7ac9976a9705a0cdedb1aad7ae5aaf81891081a
                                     </ul>
                                 </li>
                             </ul>
