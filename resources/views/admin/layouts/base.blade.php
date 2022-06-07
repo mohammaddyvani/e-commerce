@@ -37,7 +37,7 @@
     <!-- Dropify  -->
     <link rel="stylesheet" href="{{ asset('assetsAdmin/plugins/dropify/dropify.js') }}">
     <link rel="stylesheet" href="{{ asset('assetsAdmin/plugins/dropify/dropify.min.css') }}">
-    
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -51,11 +51,11 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="/admin" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                {{-- <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
-                </li>
+                </li> --}}
             </ul>
 
             <!-- Right navbar links -->
@@ -239,22 +239,20 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                    <a href="/datauser" class="nav-link">
                                         <i class="nav-icon fas fa-user"></i>
                                         <p>Data User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="/datatransaction" class="nav-link">
                                         <i class="nav-icon fas fa-hand-holding-usd"></i>
                                         <p>Data Transaksi</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-
                         </div>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="pages/widgets.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
@@ -855,7 +853,7 @@
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Informational</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

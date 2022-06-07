@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\User;
+use App\Models\Transaction;
+use App\Models\Address;
 use File;
 
 class AdminController extends Controller
@@ -15,7 +18,7 @@ class AdminController extends Controller
             Brand::all(),
             'products' => Product::all(),
         ];
-        return view('admin.pages.dataproduct', $data);
+        return view('admin.pages.product.dataproduct', $data);
     }
 
     public function addproduct(){
@@ -23,7 +26,7 @@ class AdminController extends Controller
             'brands' => Brand::all(),
             'action' => '/insertproduct'
         ];
-        return view('admin.pages.addproduct', $data);
+        return view('admin.pages.product.addproduct', $data);
     }
 
     public function insertproduct(Request $request){
@@ -49,7 +52,7 @@ class AdminController extends Controller
             'products' => Product::find($id),
             'action' => "/updateproduct/$id"
         ];
-        return view('admin.pages.addproduct', $data);
+        return view('admin.pages.product.addproduct', $data);
     }
 
     public function updateproduct(Request $request){
@@ -84,6 +87,63 @@ class AdminController extends Controller
         }
         $data->delete();
         return redirect('/admin');
+    }
+
+
+    public function datauser()
+    {
+        $data = [
+            'users' => User::all(),
+        ];
+        return view('admin.pages.product.datauser', $data);
+    }
+
+    public function edituser($id)
+    {
+        $data = [
+            'users' => User::find($id),
+            'action' => "/updateuser/$id"
+        ];
+        return view('admin.pages.product.edituser', $data);
+    }
+
+    public function updateuser(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+            'address' => 'required',
+            'phone' => 'required|numeric',
+            'role' => 'required'
+        ]);
+
+        $data = User::find($request->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = bcrypt($request->password);
+        $data->address = $request->address;
+        $data->phone = $request->phone;
+        $data->role = $request->role;
+        $data->save();
+
+        return redirect('/admin/datauser');
+    }
+
+    public function deleteuser($id)
+    {
+        $data = User::findOrFail($id);
+        $data->delete();
+        return redirect('/admin/datauser');
+    }
+
+    public function datatransaction()
+    {
+        $data = [
+            'transactions' => Transaction::all(),
+            Address::all(),
+        ];
+        return view('admin.pages.datatransaction', $data);
     }
 }
 

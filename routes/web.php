@@ -29,9 +29,9 @@ Route::get('/error', function () {
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/table', function () {
-    return view('admin.pages.tabelProduk');
-});
+// Route::get('/table', function () {
+//     return view('admin.pages.datauser');
+// });
 
 Route::get('/keranjang', function () {
     return view('keranjang');
@@ -61,16 +61,16 @@ Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
 
 // Admin
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
-
 Route::get('/addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
-
-Route::post('/insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
-
+Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
+Route::get('/datatransaction', [AdminController::class, 'datatransaction'])->name('datatransaction');
 Route::get('/editproduct/{id}', [AdminController::class, 'editproduct'])->name('editproduct');
-
+Route::get('/edituser/{id}', [AdminController::class, 'edituser'])->name('edituser');
+Route::post('/insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
 Route::post('/updateproduct/{id}', [AdminController::class, 'updateproduct'])->name('updateproduct');
-
+Route::post('/updateuser/{id}', [AdminController::class, 'updateuser'])->name('updateuser');
 Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('deleteproduct');
+Route::delete('/deleteuser/{id}', [AdminController::class, 'deleteuser'])->name('deleteuser');
 
 // Route::get('/tabelproduk', function () {
 //     return view('admin.pages.tabelproduk');

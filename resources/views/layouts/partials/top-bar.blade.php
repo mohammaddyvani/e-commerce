@@ -8,9 +8,6 @@
                         <nav class="main-nav">
                             <ul>
                                 <li class="dropdown-holder active"><a href="\">Home</a>
-                                    {{-- <ul class="hm-dropdown">
-                                        <li><a href="index.html">Home</a></li>
-                                    </ul> --}}
                                 </li>
                                 <li class="megamenu-holder "><a href="shop-left-sidebar.html">Shop <i
                                             class="ion-ios-arrow-down"></i></a>
@@ -18,8 +15,11 @@
                                         <li><span class="megamenu-title">Brands</span>
                                             <ul>
                                                 @foreach (getBrands() as $item)
-                                                <li><a href="{{route('products', $item->name)}}">{{ $item->name }}</a></li>
+                                                    <li><a
+                                                            href="{{ route('products', $item->name) }}">{{ $item->name }}</a>
+                                                    </li>
                                                 @endforeach
+
                                         </li>
                                     </ul>
                                 </li>
@@ -32,21 +32,6 @@
                                         <li><a href="single-product-tab-style-left.html">Headphone</a></li>
                                     </ul>
                                 </li>
-                                {{-- <li><span class="megamenu-title">Single Product Type</span>
-                                            <ul>
-                                                <li><a href="single-product.html">Single Product</a></li>
-                                                <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                                <li><a href="single-product-group.html">Single Product Group</a>
-                                                </li>
-                                                <li><a href="single-product-variable.html">Single Product Variable</a>
-                                                </li>
-                                                <li><a href="single-product-affiliate.html">Single Product
-                                                        Affiliate</a>
-                                                </li>
-                                                <li><a href="single-product-slider.html">Single Product Slider</a>
-                                                </li>
-                                            </ul>
-                                        </li> --}}
                             </ul>
                             </li>
                             <li><a href="/#special">Specials</a></li>
@@ -78,8 +63,7 @@
                                 </li>
                                 <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
-                                        <li><a href="javascript:void(0)">Register</a></li>
-                                        <li class="active"><a href="javascript:void(0)">Login</a></li>
+                                        <li><a href="/login">Login</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -98,12 +82,7 @@
                     <div class="main-menu_area position-relative">
                         <nav class="main-nav">
                             <ul>
-                                <li class="dropdown-holder active"><a href="/">Home</a>
-                                    {{-- <ul class="hm-dropdown">
-                                        <li><a href="index.html">Home One</a></li>
-                                        <li><a href="index-2.html">Home Two</a></li>
-                                        <li><a href="index-3.html">Home Three</a></li>
-                                    </ul> --}}
+                                <li class="dropdown-holder"><a href="/">Home</a>
                                 </li>
                                 <li class="megamenu-holder "><a href="shop-left-sidebar.html">Shop<i
                                             class="ion-ios-arrow-down"></i></a>
@@ -111,7 +90,9 @@
                                         <li><span class="megamenu-title">Brands</span>
                                             <ul>
                                                 @foreach (getBrands() as $item)
-                                                <li><a href="({{route('products', $item->name)}})">{{ $item->name }}</a></li>
+                                                    <li><a
+                                                            href="({{ route('products', $item->name) }})">{{ $item->name }}</a>
+                                                    </li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -122,27 +103,8 @@
                                                 <li><a href="single-product-tab-style-left.html">Headphone</a></li>
                                                 <li><a href="single-product-tab-style-right.html">Charger</a></li>
                                                 <li><a href="single-product-sticky-left.html">Case</a></li>
-                                                {{-- <li><a href="single-product-sticky-right.html">Sticky Right</a></li> --}}
                                             </ul>
                                         </li>
-                                        {{-- <li><span class="megamenu-title">Single Product Type</span>
-                                            <ul>
-                                                <li><a href="single-product.html">Single Product</a></li>
-                                                <li><a href="single-product-sale.html">Single Product Sale</a>
-                                                </li>
-                                                <li><a href="single-product-group.html">Single Product Group</a>
-                                                </li>
-                                                <li><a href="single-product-variable.html">Single Product
-                                                        Variable</a>
-                                                </li>
-                                                <li><a href="single-product-affiliate.html">Single Product
-                                                        Affiliate</a>
-                                                </li>
-                                                <li><a href="single-product-slider.html">Single Product
-                                                        Slider</a>
-                                                </li>
-                                            </ul>
-                                        </li> --}}
                                     </ul>
                                 </li>
                                 <li><a href="#special">Specials</a></li>
@@ -174,9 +136,6 @@
                                     </div>
                                 </a>
                             </li>
-                            {{-- <li class="contact-us_wrap">
-                                <a href="tel://+123123321345"><i class="ion-android-call"></i>+123 321 345</a>
-                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -224,15 +183,6 @@
                                                 <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
                                             </ul>
                                         </li>
-                                        {{-- <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Remote Starter</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Dual Core</a></li>
-                                                <li><a href="shop-left-sidebar.html">Gaming Monitors</a></li>
-                                                <li><a href="shop-left-sidebar.html">GPS Monitors</a></li>
-                                                <li><a href="shop-left-sidebar.html">Heat Shield</a></li>
-                                            </ul>
-                                        </li> --}}
                                     </ul>
                                 </li>
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Samsung</a>
@@ -253,27 +203,8 @@
                                                 <li><a href="shop-left-sidebar.html">Charger</a></li>
                                                 <li><a href="shop-left-sidebar.html">Earphone</a></li>
                                                 <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                {{-- <li><a href="shop-left-sidebar.html">Gas Nail Guns</a></li> --}}
                                             </ul>
                                         </li>
-                                        {{-- <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Sanders</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">1/2 Sheet Sanders</a></li>
-                                                <li><a href="shop-left-sidebar.html">1/4 Sheet Sanders</a></li>
-                                                <li><a href="shop-left-sidebar.html">Belt Sanders</a></li>
-                                                <li><a href="shop-left-sidebar.html">Drywall Sanders</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Saws</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Circular Saws</a></li>
-                                                <li><a href="shop-left-sidebar.html">Jigsaws</a></li>
-                                                <li><a href="shop-left-sidebar.html">Mitre Saws</a></li>
-                                                <li><a href="shop-left-sidebar.html">Reciprocating Saws</a></li>
-                                            </ul>
-                                        </li> --}}
                                     </ul>
                                 </li>
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Realme</a>
@@ -396,7 +327,7 @@
                             <select class="nice-select select-search-category">
                                 <option value="0">All Categories</option>
                                 @foreach (getBrands() as $item)
-                                <option value="{{ route('products', $item->name)}}">{{ $item->name }}</option> 
+                                    <option value="{{ route('products', $item->name) }}">{{ $item->name }}</option>
                                 @endforeach
                                 <option value="16">Accessories</option>
                             </select>

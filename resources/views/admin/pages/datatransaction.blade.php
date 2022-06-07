@@ -18,7 +18,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                            <li class="breadcrumb-item active">Data User</li>
+                            <li class="breadcrumb-item active">Data Transaksi</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -34,10 +34,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <h3 class="card-title my-auto">Data User</h3>
+                                    <h3 class="card-title my-auto">Data Transaksi</h3>
                                     <a href="/addproduct">
-                                        <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
-                                            user</button>
+                                        <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah transaksi</button>
                                     </a>
                                 </div>
                             </div>
@@ -47,21 +46,26 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Nama</th>
-                                            <th>Email</th>
+                                            <th>Id User</th>
+                                            <th>Nama Pembeli</th>
+                                            <th>Alamat</th>
+                                            <th>Metode Pembayaran</th>
+                                            <th>Status</th>
+                                            <th>Total Harga</th>
+                                            <th>Total Bayar</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($users as $item)
+                                        @foreach ($transactions as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
-                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->address->name }}</td>
                                                 <td>{{ $item->email }}</td>
                                                 <td>
-                                                    <a href="{{ route('edituser', $item->id) }}"
+                                                    <a href="{{ route('editproduct', $item->id) }}"
                                                         class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#modal" data-action="{{ route('deleteuser', $item->id) }}"
+                                                    <a href="#modal" data-action="{{ route('deleteproduct', $item->id) }}"
                                                         class="btn btn-danger btn-sm btn-delete">Delete</a>
                                                 </td>
                                             </tr>
