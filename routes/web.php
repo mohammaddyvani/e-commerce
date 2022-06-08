@@ -61,12 +61,14 @@ Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
 
 // Admin
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
-Route::get('/addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
 Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
 Route::get('/datatransaction', [AdminController::class, 'datatransaction'])->name('datatransaction');
+Route::get('/addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
+Route::get('/adduser', [AdminController::class, 'adduser'])->name('adduser');
 Route::get('/editproduct/{id}', [AdminController::class, 'editproduct'])->name('editproduct');
 Route::get('/edituser/{id}', [AdminController::class, 'edituser'])->name('edituser');
 Route::post('/insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
+Route::post('/insertuser', [AdminController::class, 'insertuser'])->name('insertuser');
 Route::post('/updateproduct/{id}', [AdminController::class, 'updateproduct'])->name('updateproduct');
 Route::post('/updateuser/{id}', [AdminController::class, 'updateuser'])->name('updateuser');
 Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('deleteproduct');

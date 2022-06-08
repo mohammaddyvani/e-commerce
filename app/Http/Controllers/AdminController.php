@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\User;
 use App\Models\Transaction;
 use App\Models\Address;
+use App\Models\Role;
 use File;
 
 class AdminController extends Controller
@@ -93,48 +94,62 @@ class AdminController extends Controller
     public function datauser()
     {
         $data = [
+            Role::all(),
             'users' => User::all(),
         ];
-        return view('admin.pages.product.datauser', $data);
+        return view('admin.pages.datauser', $data);
+    }
+    public function adduser(){
+        $data = [
+            'roles' => Role::all(),
+            // 'action' => '/insertuser'
+        ];
+        return view('admin.pages.user.formuser', $data);
     }
 
+    public function insertuser(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|min:6',
+        ]);
+
+        User::create($request->only('role_id', 'name', 'email', 'password'));
+        
+        return redirect('/datauser');
+    }
     public function edituser($id)
     {
         $data = [
+            'roles' => Role::all(),
             'users' => User::find($id),
             'action' => "/updateuser/$id"
         ];
-        return view('admin.pages.product.edituser', $data);
+        return view('admin.pages.user.formuser', $data);
     }
 
-    public function updateuser(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'address' => 'required',
-            'phone' => 'required|numeric',
-            'role' => 'required'
-        ]);
+    // public function updateuser(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|email',
+    //         'password' => 'required|min:6',
+    //         'address' => 'required',
+    //         'phone' => 'required|numeric',
+    //         'role' => 'required'
+    //     ]);
 
-        $data = User::find($request->id);
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->password = bcrypt($request->password);
-        $data->address = $request->address;
-        $data->phone = $request->phone;
-        $data->role = $request->role;
-        $data->save();
+    //     $data = User::find($request->id);
+    //     User::cerate($request->only('name', 'email', 'password', 'role_id'));
+    //     // Product::create($request->only('brand_id', 'catalog', 'name', 'des_Dimensions', 'des_Display', 'des_OS', 'des_Chipset', 'des_CPU', 'des_memory', 'des_battery', 'short_description', 'price', 'stock', 'discount', 'image'));
 
-        return redirect('/admin/datauser');
-    }
+    //     return redirect('/admin/datauser');
+    // }
 
     public function deleteuser($id)
     {
         $data = User::findOrFail($id);
         $data->delete();
-        return redirect('/admin/datauser');
+        return redirect('/datauser');
     }
 
     public function datatransaction()

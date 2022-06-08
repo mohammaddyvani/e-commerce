@@ -7,9 +7,9 @@
                     <div class="main-menu_area position-relative">
                         <nav class="main-nav">
                             <ul>
-                                <li class="dropdown-holder active"><a href="\">Home</a>
+                                <li class="dropdown-holder"><a href="/">Home</a>
                                 </li>
-                                <li class="megamenu-holder "><a href="shop-left-sidebar.html">Shop <i
+                                <li class="megamenu-holder "><a href="#">Shop <i
                                             class="ion-ios-arrow-down"></i></a>
                                     <ul class="hm-megamenu">
                                         <li><span class="megamenu-title">Brands</span>
@@ -164,49 +164,6 @@
                         </div>
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Xiaomi</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Mi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Redmi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Poco Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Samsung</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Galaxy Z Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy S Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy Note Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy A Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy M Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Realme</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
@@ -233,15 +190,36 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
+                                <li class="right-menu"><a href="brands/Samsung">Samsung</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
                                             <ul>
-                                                <li><a href="shop-left-sidebar.html">Find X Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Reno Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">A Series</a></li>
-                                                {{-- <li><a href="shop-left-sidebar.html">Sideboards</a></li> --}}
+                                                <li><a href="shop-left-sidebar.html">Galaxy Z Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Galaxy S Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Galaxy Note Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Galaxy A Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Galaxy M Series</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Accessories</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
+                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
+                                                <li><a href="shop-left-sidebar.html">Case</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="right-menu"><a href="brands/Xiaomi">Xiaomi</a>
+                                    <ul class="cat-mega-menu cat-mega-menu-3">
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Series</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Mi Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Redmi Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Poco Series</a></li>
                                             </ul>
                                         </li>
                                         <li class="right-menu cat-mega-title">
@@ -277,6 +255,29 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
+                                    <ul class="cat-mega-menu cat-mega-menu-3">
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Series</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Find X Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Reno Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">A Series</a></li>
+                                                {{-- <li><a href="shop-left-sidebar.html">Sideboards</a></li> --}}
+                                            </ul>
+                                        </li>
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Accessories</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
+                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
+                                                <li><a href="shop-left-sidebar.html">Case</a></li>
+                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Vivo</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
@@ -411,10 +412,10 @@
                 <span class="ammount">Rp45.000.00‬0</span>
             </div>
             <div class="minicart-btn_area">
-                <a href="cart.html" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
+                <a href="cart" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
             </div>
             <div class="minicart-btn_area">
-                <a href="checkout.html" class="uren-btn uren-btn_dark uren-btn_fullwidth">Checkout</a>
+                <a href="checkout" class="uren-btn uren-btn_dark uren-btn_fullwidth">Checkout</a>
             </div>
         </div>
     </div>
@@ -432,7 +433,7 @@
                 </div>
                 <nav class="offcanvas-navigation">
                     <ul class="mobile-menu">
-                        <li class="menu-item-has-children active"><a href="/"><span
+                        <li class="menu-item-has-children"><a href="/"><span
                                     class="mm-text">Home</span></a>
                         </li>
                         <li class="menu-item-has-children">
