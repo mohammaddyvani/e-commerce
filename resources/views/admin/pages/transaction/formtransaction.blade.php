@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Tambah Produk</h1>
+                        <h1 class="m-0">Form Transaksi</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Tambah Produk</li>
+                            <li class="breadcrumb-item active">Form Transaksi</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -28,7 +28,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <h3 class="card-title my-auto">Tambah Produk</h3>
+                                    <h3 class="card-title my-auto">Form Transaksi</h3>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -36,8 +36,8 @@
                                 <form action="{{$action}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="nameproduct" class="form-label">Name Product</label>
-                                        <input type="text" name="name" class="form-control" id="nameproduct"
+                                        <label for="namepembeli" class="form-label">Name Pembeli</label>
+                                        <input type="text" name="name" class="form-control" id="name"
                                             aria-describedby="name" value="{{ isset($products) ? $products->name : '' }}">
                                     </div>
                                     <div class="mb-3">
@@ -112,7 +112,6 @@
                                         <input type="file" name="file" id="dropify">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <a class="btn btn-secondary" href="/admin" role="button">Cancle</a>
                                 </form>
                             </div>
                             <!-- /.card-body -->

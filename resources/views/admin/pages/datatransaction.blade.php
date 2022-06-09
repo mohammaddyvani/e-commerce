@@ -1,12 +1,6 @@
 @extends('admin.layouts.base')
 
 @section('content')
-    <div class="wrapper">
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('assetsAdmin/dist/img/2.png') }}" alt="UrenAdmin">
-        </div>
-    </div>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">

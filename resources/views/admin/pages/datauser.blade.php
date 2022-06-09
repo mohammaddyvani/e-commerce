@@ -1,12 +1,6 @@
 @extends('admin.layouts.base')
 
 @section('content')
-    <div class="wrapper">
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('assetsAdmin/dist/img/2.png') }}" alt="UrenAdmin">
-        </div>
-    </div>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -35,7 +29,7 @@
                             <div class="card-header">
                                 <div class="row">
                                     <h3 class="card-title my-auto">Data User</h3>
-                                    <a href="/addproduct">
+                                    <a href="adduser">
                                         <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
                                             user</button>
                                     </a>
@@ -49,6 +43,7 @@
                                             <th>Id</th>
                                             <th>Nama</th>
                                             <th>Email</th>
+                                            <th>Role</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -58,6 +53,7 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->email }}</td>
+                                                <td>{{ $item->role->name }}</td>
                                                 <td>
                                                     <a href="{{ route('edituser', $item->id) }}"
                                                         class="btn btn-warning btn-sm">Edit</a>
@@ -86,13 +82,13 @@
                     @csrf
                     @method('delete')
                     <div class="modal-header">
-                        <h5 class="modal-title">Hapus Produk</h5>
+                        <h5 class="modal-title">Hapus Pengguna</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Apakah anda yakin ingin menghapus produk ini?</p>
+                        <p>Apakah anda yakin ingin menghapus pengguna ini?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
