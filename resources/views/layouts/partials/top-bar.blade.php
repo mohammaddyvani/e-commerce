@@ -164,30 +164,15 @@
                         </div>
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
-<<<<<<< HEAD
                                 <li><a href="shop-left-sidebar.html">Apple</a></li>
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Infinix</a>
-=======
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Realme</a>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
                                             <ul>
-<<<<<<< HEAD
                                                 <li><a href="shop-left-sidebar.html">Note Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Hot Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Smart Series</a></li>
-=======
-                                                <li><a href="shop-left-sidebar.html">Narzo Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">X Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">GT Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">C Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">9 Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">8 Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">7 Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">6 Series</a></li>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                             </ul>
                                         </li>
                                         <li class="right-menu cat-mega-title">
@@ -201,11 +186,7 @@
                                         </li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
-                                <li class="right-menu"><a href="shop-left-sidebar.html">OnePlus`</a>
-=======
-                                <li class="right-menu"><a href="brands/Samsung">Samsung</a>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
+                                <li class="right-menu"><a href="shop-left-sidebar.html">OnePlus</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
@@ -225,24 +206,14 @@
                                         </li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
-=======
-                                <li class="right-menu"><a href="brands/Xiaomi">Xiaomi</a>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
                                             <ul>
-<<<<<<< HEAD
                                                 <li><a href="shop-left-sidebar.html">Find X Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Reno Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">A Series</a></li>
-=======
-                                                <li><a href="shop-left-sidebar.html">Mi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Redmi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Poco Series</a></li>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                             </ul>
                                         </li>
                                         <li class="right-menu cat-mega-title">
@@ -256,16 +227,11 @@
                                         </li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Realme</a>
-=======
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Infinix</a>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
                                             <ul>
-<<<<<<< HEAD
                                                 <li><a href="shop-left-sidebar.html">Narzo Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">X Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">GT Series</a></li>
@@ -274,12 +240,6 @@
                                                 <li><a href="shop-left-sidebar.html">8 Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">7 Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">6 Series</a></li>
-=======
-                                                <li><a href="shop-left-sidebar.html">Note Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Hot Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Smart Series</a></li>
-                                                {{-- <li><a href="shop-left-sidebar.html">Sideboards</a></li> --}}
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                             </ul>
                                         </li>
                                         <li class="right-menu cat-mega-title">
@@ -293,27 +253,16 @@
                                         </li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Samsung</a>
-=======
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
                                             <ul>
-<<<<<<< HEAD
                                                 <li><a href="shop-left-sidebar.html">Galaxy Z Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Galaxy S Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Galaxy Note Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Galaxy A Series</a></li>
                                                 <li><a href="shop-left-sidebar.html">Galaxy M Series</a></li>
-=======
-                                                <li><a href="shop-left-sidebar.html">Find X Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Reno Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">A Series</a></li>
-                                                {{-- <li><a href="shop-left-sidebar.html">Sideboards</a></li> --}}
->>>>>>> 5f3197ee9af3197c1fa8d38594010a4fc392edd7
                                             </ul>
                                         </li>
                                         <li class="right-menu cat-mega-title">
