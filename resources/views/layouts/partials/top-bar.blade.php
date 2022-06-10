@@ -155,6 +155,69 @@
                         </div>
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
+                                <li><a href="shop-left-sidebar.html">Apple</a></li>
+                                <li class="right-menu"><a href="shop-left-sidebar.html">Infinix</a>
+                                    <ul class="cat-mega-menu cat-mega-menu-3">
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Series</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Note Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Hot Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Smart Series</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Accessories</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
+                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
+                                                <li><a href="shop-left-sidebar.html">Case</a></li>
+                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="right-menu"><a href="shop-left-sidebar.html">OnePlus</a>
+                                    <ul class="cat-mega-menu cat-mega-menu-3">
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Series</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">OnePlus Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Nord Series</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Accessories</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
+                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
+                                                <li><a href="shop-left-sidebar.html">Case</a></li>
+                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
+                                    <ul class="cat-mega-menu cat-mega-menu-3">
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Series</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Find X Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Reno Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">A Series</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="right-menu cat-mega-title">
+                                            <a href="shop-left-sidebar.html">Accessories</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
+                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
+                                                <li><a href="shop-left-sidebar.html">Case</a></li>
+                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="right-menu"><a href="shop-left-sidebar.html">Realme</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
@@ -181,7 +244,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="right-menu"><a href="brands/Samsung">Samsung</a>
+                                <li class="right-menu"><a href="shop-left-sidebar.html">Samsung</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
@@ -199,71 +262,6 @@
                                                 <li><a href="shop-left-sidebar.html">Charger</a></li>
                                                 <li><a href="shop-left-sidebar.html">Earphone</a></li>
                                                 <li><a href="shop-left-sidebar.html">Case</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="brands/Xiaomi">Xiaomi</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Mi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Redmi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Poco Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Infinix</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Note Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Hot Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Smart Series</a></li>
-                                                {{-- <li><a href="shop-left-sidebar.html">Sideboards</a></li> --}}
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Find X Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Reno Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">A Series</a></li>
-                                                {{-- <li><a href="shop-left-sidebar.html">Sideboards</a></li> --}}
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -288,13 +286,14 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">OnePlus`</a>
+                                <li class="right-menu"><a href="shop-left-sidebar.html">Xiaomi</a>
                                     <ul class="cat-mega-menu cat-mega-menu-3">
                                         <li class="right-menu cat-mega-title">
                                             <a href="shop-left-sidebar.html">Series</a>
                                             <ul>
-                                                <li><a href="shop-left-sidebar.html">OnePlus Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Nord Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Mi Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Redmi Series</a></li>
+                                                <li><a href="shop-left-sidebar.html">Poco Series</a></li>
                                             </ul>
                                         </li>
                                         <li class="right-menu cat-mega-title">
@@ -308,7 +307,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="shop-left-sidebar.html">Apple</a></li>
                             </ul>
                         </div>
                     </div>
@@ -332,14 +330,6 @@
                 <div class="custom-cart_col col-12">
                     <div class="header-right_area">
                         <ul>
-                            {{-- <li class="mobile-menu_wrap d-flex d-lg-none">
-                                <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
-                                    <i class="ion-navicon"></i>
-                                </a>
-                            </li> --}}
-                            {{-- <li class="contact-us_wrap">
-                                <a href="tel://+123123321345"><i class="ion-android-call"></i>+123 321 345</a>
-                            </li> --}}
                             <li class="minicart-wrap ml-auto mr-0">
                                 <a href="#miniCart" class="minicart-btn toolbar-btn">
                                     <div class="minicart-count_area">

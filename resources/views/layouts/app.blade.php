@@ -50,9 +50,9 @@
                             </div>
                             <div class="widgets-essential_stuff">
                                 <ul>
-                                    <li class="uren-address"><span>Address:</span> Jalan Yos Sudarso No.12 Cungking (68270), Banyuwangi, Jawa Timur</li>
+                                    <li class="uren-address"><span>Address:</span> Jalan Raya Jember No.KM13 Kawang (68461), Labanasem, Kabat - Banyuwangi</li>
                                     <li class="uren-phone"><span>Call
-                                            Us:</span> <a href="tel://+62430019256">+6243 - 0019 - 256</a>
+                                            Us:</span> <a href="tel://+62430019256">+6283 - 300 - 192 - 5196</a>
                                     </li>
                                     <li class="uren-email"><span>Email:</span> <a
                                             href="mailto://phoneclipindo@gmail.com">phoneclipindo@gmail.com</a></li>

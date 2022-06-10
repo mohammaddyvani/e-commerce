@@ -29,6 +29,7 @@ Route::get('/error', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
 // Route::get('/table', function () {
 //     return view('admin.pages.datauser');
 // });
@@ -41,6 +42,13 @@ Route::get('/detail', function () {
     return view('detailproduct');
 });
 
+Route::get('/aboutus', function () {
+    return view('abouts');
+});
+
+Route::get('/myaccount', function () {
+    return view('myaccount');
+});
 // Route::get('/checkout', function () {
 //     return view('checkout');
 // });
