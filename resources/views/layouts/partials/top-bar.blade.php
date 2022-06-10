@@ -87,22 +87,13 @@
                                 <li class="megamenu-holder "><a href="shop-left-sidebar.html">Shop<i
                                             class="ion-ios-arrow-down"></i></a>
                                     <ul class="hm-megamenu">
-                                        <li><span class="megamenu-title">Brands</span>
+                                        <li><span class="megamenu-title">Category</span>
                                             <ul>
                                                 @foreach (getBrands() as $item)
                                                     <li><a
                                                             href="({{ route('products', $item->name) }})">{{ $item->name }}</a>
                                                     </li>
                                                 @endforeach
-                                            </ul>
-                                        </li>
-                                        <li><span class="megamenu-title">Accessoriese</span>
-                                            <ul>
-                                                <li><a href="single-product-gallery-left.html">Cable</a></li>
-                                                <li><a href="single-product-gallery-right.html">Earphone</a></li>
-                                                <li><a href="single-product-tab-style-left.html">Headphone</a></li>
-                                                <li><a href="single-product-tab-style-right.html">Charger</a></li>
-                                                <li><a href="single-product-sticky-left.html">Case</a></li>
                                             </ul>
                                         </li>
                                     </ul>
