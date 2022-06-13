@@ -53,34 +53,38 @@ Route::get('/myaccount', function () {
 //     return view('checkout');
 // });
 
-Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
+Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::get('/brands/{name}', [HomeController::class, 'products'])->name('products');
-
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
-
+Route::get('/category/{catalog}', [HomeController::class, 'category'])->name('category');
+// Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/wishlist', [HomeController::class, 'wishlist'])->name('wishlist');
+Route::get('/detail/{name}', [HomeController::class, 'detail'])->name('detail');
+Route::get('/data-cart', [HomeController::class, 'cart'])->name('getDataCart');
+Route::get('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add-to-cart');
+Route::delete('remove-from-cart/{id}', [HomeController::class, 'removeFromCart'])->name('remove-from-cart');
 
-
-Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
+Route::get('cart', [ProductController::class, 'cart'])->name('cart');
+Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
 
 // Admin
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
-Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
-Route::get('/datatransaction', [AdminController::class, 'datatransaction'])->name('datatransaction');
-Route::get('/addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
-Route::get('/adduser', [AdminController::class, 'adduser'])->name('adduser');
-Route::get('/editproduct/{id}', [AdminController::class, 'editproduct'])->name('editproduct');
-Route::get('/edituser/{id}', [AdminController::class, 'edituser'])->name('edituser');
-Route::post('/insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
-Route::post('/insertuser', [AdminController::class, 'insertuser'])->name('insertuser');
-Route::post('/updateproduct/{id}', [AdminController::class, 'updateproduct'])->name('updateproduct');
-Route::post('/updateuser/{id}', [AdminController::class, 'updateuser'])->name('updateuser');
-Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('deleteproduct');
-Route::delete('/deleteuser/{id}', [AdminController::class, 'deleteuser'])->name('deleteuser');
+Route::middleware('auth.admin')->group(function(){
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+    Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
+    Route::get('/datatransaction', [AdminController::class, 'datatransaction'])->name('datatransaction');
+    Route::get('/addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
+    Route::get('/adduser', [AdminController::class, 'adduser'])->name('adduser');
+    Route::get('/editproduct/{id}', [AdminController::class, 'editproduct'])->name('editproduct');
+    Route::get('/edituser/{id}', [AdminController::class, 'edituser'])->name('edituser');
+    Route::post('/insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
+    Route::post('/insertuser', [AdminController::class, 'insertuser'])->name('insertuser');
+    Route::post('/updateproduct/{id}', [AdminController::class, 'updateproduct'])->name('updateproduct');
+    Route::post('/updateuser/{id}', [AdminController::class, 'updateuser'])->name('updateuser');
+    Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('deleteproduct');
+    Route::delete('/deleteuser/{id}', [AdminController::class, 'deleteuser'])->name('deleteuser');
+});
 
 // Route::get('/tabelproduk', function () {
 //     return view('admin.pages.tabelproduk');

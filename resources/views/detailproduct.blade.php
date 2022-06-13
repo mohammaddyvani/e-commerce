@@ -3,7 +3,7 @@
 @section('content')
     <!-- Begin Uren's Single Product Area -->
     <div class="sp-area">
-        <div class="container-fluid">
+        <div class="container-fluid col-md-8 col-sm-10 col-12 mx-auto">
             <div class="sp-nav">
                 <div class="row">
                     <div class="col-lg-4">
@@ -17,7 +17,7 @@
                             "asNavFor": ".sp-img_slider-nav"
                             }'>
                                 <div class="single-slide red">
-                                    <img src="assets/images/product/large-size/aa1.jpg" alt="Uren's Product Image">
+                                    <img src="{{ asset('assets/images/product/' . $detailProduct['image']) }}" alt="Uren's Product Image">
                                 </div> 
                             </div>
                             <div class="sp-img_slider-nav slick-slider-nav uren-slick-slider slider-navigation_style-3" data-slick-options='{
@@ -38,25 +38,35 @@
                     <div class="col-lg-8">
                         <div class="sp-content">
                             <div class="sp-heading">
-                                <h4><a href="#">Apple Iphone 11 Pro</a></h4>
+                                <h4><a href="#">{{ $detailProduct['name']}}</a></h4>
                             </div>
                             <div class="rating-box">
                                 <ul>
                                     <li><i class="ion-android-star"></i></li>
                                     <li><i class="ion-android-star"></i></li>
                                     <li><i class="ion-android-star"></i></li>
-                                    <li class="silver-color"><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
                                     <li class="silver-color"><i class="ion-android-star"></i></li>
                                 </ul>
                             </div>
                             <div class="sp-essential_stuff pt-3" style="font-size: 16px">
-                                <ul>
-                                    <li>Brands <a href="javascript:void(0)">Apple</a></li>
-                                    <li>CPU: <a href="javascript:void(0)">Hexa-Core</a></li>
-                                    <li>RAM: <a href="javascript:void(0)">64GB 4GB</a></li>
-                                    <li>Rilis <a href="javascript:void(0)"><span>September 2022</span></a></li>
-                                    <li>Price: <a href="javascript:void(0)">24.999.000</a></li>
-                                </ul>
+                                <table>
+                                    <tr>
+                                        <td style="font-weight : 700">Brands</td>
+                                        <td style="font-weight : 700">:</td>
+                                        <td style="padding-left: 10px"><a href="{{ route('products', $detailProduct->brand->name) }}">{{ $detailProduct->brand->name }}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight : 700">CPU</td>
+                                        <td style="font-weight : 700">:</td>
+                                        <td style="padding-left: 10px"><span>{{ $detailProduct['des_CPU'] }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight : 700">Price</td>
+                                        <td style="font-weight : 700">:</td>
+                                        <td style="padding-left: 10px"><span>Rp{{ number_format($detailProduct['price']) }}</span></td>
+                                    </tr>
+                                </table>
                             </div>
                             <div class="quantity">
                                 <label>Quantity</label>
@@ -69,21 +79,13 @@
                             <div class="qty-btn_area">
                                 <ul>
                                     <li><a class="qty-cart_btn" href="cart.html">Add To Cart</a></li>
-                                    <li><a class="qty-wishlist_btn" href="wishlist.html" data-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                    </li>
-                                    <li><a class="qty-compare_btn" href="compare.html" data-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
                                 </ul>
                             </div>
                             <div class="uren-tag-line">
                                 <h6>Tags:</h6>
-                                <a href="javascript:void(0)">Apple</a>,
-                                <a href="javascript:void(0)">Xiaomi</a>,
-                                <a href="javascript:void(0)">Infinix</a>,
-                                <a href="javascript:void(0)">Vivo</a>,
-                                <a href="javascript:void(0)">Oppo</a>,
-                                <a href="javascript:void(0)">Realme</a>,
-                                <a href="javascript:void(0)">OnePlus</a>,
-                                <a href="javascript:void(0)">Samsung</a>
+                                @foreach (getBrands() as $item)
+                                    <a href="{{ route('products', $item->name) }}">{{ $item->name }}</a>
+                                @endforeach
                             </div>
                             <div class="uren-social_link">
                                 <ul>
@@ -92,23 +94,13 @@
                                             <i class="fab fa-facebook"></i>
                                         </a>
                                     </li>
-                                    <li class="twitter">
-                                        <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </li>
                                     <li class="youtube">
                                         <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
                                             <i class="fab fa-youtube"></i>
                                         </a>
                                     </li>
-                                    <li class="google-plus">
-                                        <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
-                                            <i class="fab fa-google-plus"></i>
-                                        </a>
-                                    </li>
                                     <li class="instagram">
-                                        <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="Instagram">
+                                        <a href="https://instagaram.com/" data-toggle="tooltip" target="_blank" title="Instagram">
                                             <i class="fab fa-instagram"></i>
                                         </a>
                                     </li>
@@ -142,7 +134,7 @@
                                     <ul>
                                         <li>
                                             <strong>Description</strong>
-                                            <span>Voluptatum, minus? Optio molestias voluptates aspernatur laborum ratione minima, natus eaque nemo rem quisquam, suscipit architecto saepe. Debitis omnis labore laborum consectetur, quas, esse voluptates minus aliquam modi nesciunt earum! Vero rerum molestiae corporis libero repellat doloremque quae sapiente ratione maiores qui aliquam, sunt obcaecati! Iure nisi doloremque numquam delectus.</span>
+                                            <span>{{ $detailProduct['short_description']}}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -152,43 +144,43 @@
                                     <tbody>
                                         <tr>
                                             <td><strong>Dimensions</strong></td>
-                                            <td>144 x 71.4 x 8.1 mm</td>
+                                            <td>{{ $detailProduct['des_Dimensions']}}</td>
                                         </tr>
                                     </tbody>
                                     <tbody>
                                         <tr>
                                             <td><strong>Display</strong></td>
-                                            <td>Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak)</td>
+                                            <td>{{ $detailProduct['des_Display'] }}</td>
                                         </tr>
                                     </tbody>
                                     <tbody>
                                         <tr>
                                             <td><strong>OS</strong></td>
-                                            <td>iOS 13, upgradable to iOS 15.5</td>
+                                            <td>{{ $detailProduct['des_OS']}}</td>
                                         </tr>
                                     </tbody>
                                     <tbody>
                                         <tr>
                                             <td><strong>Chipset</strong></td>
-                                            <td>Apple A13 Bionic (7 nm+)</td>
+                                            <td>{{ $detailProduct['des_Chipset']}}</td>
                                         </tr>
                                     </tbody>
                                     <tbody>
                                         <tr>
                                             <td><strong>CPU</strong></td>
-                                            <td>Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)</td>
+                                            <td>{{ $detailProduct['des_CPU']}}</td>
                                         </tr>
                                     </tbody>
                                     <tbody>
                                         <tr>
                                             <td><strong>Memory</strong></td>
-                                            <td>64GB 4GB RAM, 256GB 4GB RAM, 512GB 4GB RAM</td>
+                                            <td>{{ $detailProduct['des_memory']}}</td>
                                         </tr>
                                     </tbody>
                                     <tbody>
                                         <tr>
                                             <td><strong>Battery</strong></td>
-                                            <td>Li-Ion 3046 mAh, non-removable (11.67 Wh)</td>
+                                            <td>{{ $detailProduct['des_battery']}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -220,7 +212,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <h2>Write a review</h2>
+                                        {{-- <h2>Write a review</h2>
                                         <div class="form-group required">
                                             <div class="col-sm-12 p-0">
                                                 <label>Your Email <span class="required">*</span></label>
@@ -253,7 +245,7 @@
                                             <div class="uren-btn-ps_right">
                                                 <button class="uren-btn-2">Continue</button>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </form>
                                 </div>
                             </div>

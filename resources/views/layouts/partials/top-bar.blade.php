@@ -9,27 +9,18 @@
                             <ul>
                                 <li class="dropdown-holder"><a href="/">Home</a>
                                 </li>
-                                <li class="megamenu-holder "><a href="#">Shop <i
-                                            class="ion-ios-arrow-down"></i></a>
-                                    <ul class="hm-megamenu">
-                                        <li><span class="megamenu-title">Brands</span>
+                                <li class="megamenu-holder "><a href="#">Shop <i class="ion-ios-arrow-down"></i></a>
+                                    <ul class="hm-megamenu" style="width: auto">
+                                        <li><span class="megamenu-title">Category</span>
                                             <ul>
-                                                @foreach (getBrands() as $item)
-                                                    <li><a
-                                                            href="{{ route('products', $item->name) }}">{{ $item->name }}</a>
-                                                    </li>
-                                                @endforeach
-
+                                                <li>
+                                                    <a href="{{ route('category', 'smartphone') }}">Smartphone</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('category', 'accessories') }}">Accessories</a>
+                                                </li>
+                                            {{-- </ul> --}}
                                         </li>
-                                    </ul>
-                                </li>
-                                <li><span class="megamenu-title">Accessoriese</span>
-                                    <ul>
-                                        <li><a href="/error">Cable</a></li>
-                                        <li><a href="single-product-sticky-left.html">Case</a></li>
-                                        <li><a href="single-product-tab-style-right.html">Charger</a></li>
-                                        <li><a href="single-product-gallery-right.html">Earphone</a></li>
-                                        <li><a href="single-product-tab-style-left.html">Headphone</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -86,14 +77,21 @@
                                 </li>
                                 <li class="megamenu-holder "><a href="shop-left-sidebar.html">Shop<i
                                             class="ion-ios-arrow-down"></i></a>
-                                    <ul class="hm-megamenu">
+                                    <ul class="hm-megamenu" style="width: auto">
                                         <li><span class="megamenu-title">Category</span>
                                             <ul>
-                                                @foreach (getBrands() as $item)
-                                                    <li><a
+                                                {{-- @foreach (getBrands() as $item)
+                                                    <li>
+                                                        <a
                                                             href="({{ route('products', $item->name) }})">{{ $item->name }}</a>
                                                     </li>
-                                                @endforeach
+                                                @endforeach --}}
+                                                <li>
+                                                    <a href="{{ route('category', 'smartphone') }}">Smartphone</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('category', 'accessories') }}">Accessories</a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -118,12 +116,11 @@
                             <li class="minicart-wrap ml-auto mr-0">
                                 <a href="#miniCart" class="minicart-btn toolbar-btn">
                                     <div class="minicart-count_area">
-                                        <span class="item-count">3</span>
+                                        <span class="item-count d-none cartCount"></span>
                                         <i class="ion-bag"></i>
                                     </div>
                                     <div class="minicart-front_text">
-                                        <span>Cart:</span>
-                                        <span class="total-price">462.4</span>
+                                        <span>Cart</span>
                                     </div>
                                 </a>
                             </li>
@@ -155,158 +152,9 @@
                         </div>
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
-                                <li><a href="shop-left-sidebar.html">Apple</a></li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Infinix</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Note Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Hot Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Smart Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">OnePlus</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">OnePlus Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Nord Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Oppo</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Find X Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Reno Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">A Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Realme</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Narzo Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">X Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">GT Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">C Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">9 Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">8 Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">7 Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">6 Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Samsung</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Galaxy Z Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy S Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy Note Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy A Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Galaxy M Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Vivo</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Xperia Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="shop-left-sidebar.html">Xiaomi</a>
-                                    <ul class="cat-mega-menu cat-mega-menu-3">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Series</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Mi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Redmi Series</a></li>
-                                                <li><a href="shop-left-sidebar.html">Poco Series</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="shop-left-sidebar.html">Accessories</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Charger</a></li>
-                                                <li><a href="shop-left-sidebar.html">Earphone</a></li>
-                                                <li><a href="shop-left-sidebar.html">Case</a></li>
-                                                <li><a href="shop-left-sidebar.html">True Wireless Stereo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
+                                @foreach (getBrands() as $item)
+                                    <li><a href="{{ route('products', $item->name) }}">{{ $item->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -333,12 +181,11 @@
                             <li class="minicart-wrap ml-auto mr-0">
                                 <a href="#miniCart" class="minicart-btn toolbar-btn">
                                     <div class="minicart-count_area">
-                                        <span class="item-count">3</span>
+                                        <span class="item-count d-none cartCount"></span>
                                         <i class="ion-bag"></i>
                                     </div>
                                     <div class="minicart-front_text">
-                                        <span>Cart:</span>
-                                        <span class="total-price">462.4</span>
+                                        <span>Cart</span>
                                     </div>
                                 </a>
                             </li>
@@ -348,7 +195,7 @@
             </div>
         </div>
     </div>
-    <div class="offcanvas-minicart_wrapper" id="miniCart">
+    <div class="offcanvas-minicart_wrapper" id="miniCart" data-url="{{ route('getDataCart') }}">
         <div class="offcanvas-menu-inner">
             <a href="#" class="btn-close"><i class="ion-android-close"></i></a>
             <div class="minicart-content">
@@ -390,7 +237,7 @@
             </div>
             <div class="minicart-item_total">
                 <span>Subtotal</span>
-                <span class="ammount">Rp45.000.00‬0</span>
+                <span class="ammount" id="subtotal">Rp. 0</span>
             </div>
             <div class="minicart-btn_area">
                 <a href="cart" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
@@ -414,8 +261,7 @@
                 </div>
                 <nav class="offcanvas-navigation">
                     <ul class="mobile-menu">
-                        <li class="menu-item-has-children"><a href="/"><span
-                                    class="mm-text">Home</span></a>
+                        <li class="menu-item-has-children"><a href="/"><span class="mm-text">Home</span></a>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="shop-left-sidebar.html">

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('id_user');
             $table->foreignId('id_address');
             $table->string('paymet_method');
-            $table->string('status');
+            $table->enum('status', ['pending', 'cancel', 'pending_payment', 'shipping', 'delivered', 'returned', 'packed', 'received']);
             $table->integer('total_price');
             $table->integer('total_payment');
             $table->timestamps();

@@ -55,7 +55,7 @@
                                     <div class="inner-slide">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a href="{{ route('detail', $item['name'])}}">
                                                     <img class="primary-img"
                                                         src="{{ asset('assets/images/product/' . $item['image']) }}"
                                                         alt="Uren's Product Image">

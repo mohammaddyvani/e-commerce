@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("brand_id");
-            $table->enum("catalog", ["smartphone", "accessories"]);
+            $table->enum("catalog", ["Smartphone", "Accessories"]);
             $table->string("name");
             $table->string("des_Dimensions");
             $table->string("des_Display");

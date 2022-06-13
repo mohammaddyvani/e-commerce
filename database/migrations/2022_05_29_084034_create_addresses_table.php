@@ -15,13 +15,11 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("id_transaction");
             $table->string("name");
             $table->text("address");
             $table->string("city");
             $table->string("districts");
-            $table->string("
-            province");
+            $table->string("province");
             $table->string("country");
             $table->string("postal_code");
             $table->string("email");

@@ -223,7 +223,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <div class="nav-item">
+                        <li class="nav-item">
                             <a href="/admin" class="nav-link active">
                                 <i class="nav-icon fas fa-th-large"></i>
                                 <p>
@@ -251,7 +251,47 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin" class="nav-link">
+                                <i class="nav-icon fas fa-donate"></i>
+                                <p>
+                                    Transaksi
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin" class="nav-link">
+                                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                                        <p>Penjualan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/datauser" class="nav-link">
+                                        <i class="nav-icon fas fa-shopping-bag"></i>
+                                        <p>Pembelian</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="right fas fa-hands-usd"></i>
+                                <p>
+                                    Transaksi
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="nav-icon fas fa-hand-holding-usd"></i>
+                                        <p>Penjualan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> --}}
                         {{-- <li class="nav-item">
                             <a href="pages/widgets.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -865,7 +905,7 @@
         @yield('content')
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            <strong>Copyright &copy; 2022 <a href="#">Uren</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.1.0

@@ -31,13 +31,13 @@
                                     <h3 class="card-title my-auto">Data User</h3>
                                     <a href="adduser">
                                         <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
-                                            user</button>
+                                            User</button>
                                     </a>
                                 </div>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
+                                <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>Id</th>

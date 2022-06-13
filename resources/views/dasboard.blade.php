@@ -47,7 +47,7 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <div class="product-img">
-                                            <a href="single-product.html">
+                                            <a href="{{ route('detail', $item['name'])}}">
                                                 <img class="primary-img"
                                                     src=" {{ asset('assets/images/product/' . $item['image']) }} "
                                                     alt="Uren's Product Image">
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="add-actions">
                                                 <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip"
+                                                    <li><a class="uren-add_cart add-to-cart" href="{{ route('add-to-cart', $item->id) }}" data-toggle="tooltip"
                                                             data-placement="top" title="Add To Cart"><i
                                                                 class="ion-bag"></i></a>
                                                     </li>
@@ -119,12 +119,12 @@
                                 <div class="inner-slide">
                                     <div class="single-product">
                                         <div class="product-img">
-                                            <a href="single-product.html">
+                                            <a href="{{ route('detail', $item['name'])}}">
                                                 <img class="primary-img" src="{{ asset('assets/images/product/' . $item['image']) }}"
                                                     alt="Uren's Product Image">
                                             </a>
                                             <div class="sticker-area-2">
-                                                <span class="sticker-2">{{ $item['sale']}}</span>
+                                                <span class="sticker-2">Sale</span>
                                                 <span class="sticker">New</span>
                                             </div>
                                         </div>
@@ -170,7 +170,7 @@
                                                 </div>
                                                 <div class="add-actions">
                                                     <ul>
-                                                        <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip"
+                                                        <li><a class="uren-add_cart add-to-cart" href="{{ route('add-to-cart', $item->id) }}" data-toggle="tooltip"
                                                                 data-placement="top" title="Add To Cart"><i
                                                                     class="ion-bag"></i>Add To Cart</a>
                                                         </li>
