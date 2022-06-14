@@ -65,12 +65,12 @@
                                                 </div>
                                                 <div class="add-actions">
                                                     <ul>
-                                                        <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip"
+                                                        <li><a class="uren-add_cart" href="{{ route('add-to-cart', $item->id) }}" data-toggle="tooltip"
                                                                 data-placement="top" title="Add To Cart"><i
                                                                     class="ion-bag"></i></a>
                                                         </li>
                                                         <li class="quick-view-btn" data-toggle="modal"
-                                                            data-target="#exampleModalCenter"><a href="javascript:void(0)"
+                                                            data-target="#exampleModalCenter"><a href="{{ route('detail', $item['name'])}}"
                                                                 data-toggle="tooltip" data-placement="top"
                                                                 title="Quick View"><i class="ion-android-open"></i></a></li>
                                                     </ul>

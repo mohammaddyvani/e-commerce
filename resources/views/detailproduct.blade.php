@@ -38,7 +38,7 @@
                     <div class="col-lg-8">
                         <div class="sp-content">
                             <div class="sp-heading">
-                                <h4><a href="#">{{ $detailProduct['name']}}</a></h4>
+                                <h4><a>{{ $detailProduct['name']}}</a></h4>
                             </div>
                             <div class="rating-box">
                                 <ul>
@@ -54,12 +54,12 @@
                                     <tr>
                                         <td style="font-weight : 700">Brands</td>
                                         <td style="font-weight : 700">:</td>
-                                        <td style="padding-left: 10px"><a href="{{ route('products', $detailProduct->brand->name) }}">{{ $detailProduct->brand->name }}</a></td>
+                                        <td style="padding-left: 10px"><a style="color: #343a40" href="{{ route('products', $detailProduct->brand->name) }}">{{ $detailProduct->brand->name }}</a></td>
                                     </tr>
                                     <tr>
-                                        <td style="font-weight : 700">CPU</td>
+                                        <td style="font-weight : 700">Memory</td>
                                         <td style="font-weight : 700">:</td>
-                                        <td style="padding-left: 10px"><span>{{ $detailProduct['des_CPU'] }}</span></td>
+                                        <td style="padding-left: 10px"><span>{{ $detailProduct['des_memory'] }}</span></td>
                                     </tr>
                                     <tr style="font-size: 30px; color: #0c2a5c">
                                         <td></td>

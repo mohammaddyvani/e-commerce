@@ -202,42 +202,11 @@
                 <div class="minicart-heading">
                     <h4>Shopping Cart</h4>
                 </div>
-                <ul class="minicart-list">
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                        <div class="product-item_img">
-                            <img src="assets/images/product/product_apple_13mini.jpg" alt="Uren's Product Image">
-                        </div>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="shop-left-sidebar.html">IPhone 13 Mini</a>
-                            <span class="product-item_quantity">1 x Rp14.990,000</span>
-                        </div>
-                    </li>
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                        <div class="product-item_img">
-                            <img src="assets/images/product/product_apple_11pro.jpg" alt="Uren's Product Image">
-                        </div>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="shop-left-sidebar.html">IPhone 11 Pro</a>
-                            <span class="product-item_quantity">1 x Rp24.990.000</span>
-                        </div>
-                    </li>
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                        <div class="product-item_img">
-                            <img src="assets/images/product/product_apple_13.jpg" alt="Uren's Product Image">
-                        </div>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="shop-left-sidebar.html">IPhone 13</a>
-                            <span class="product-item_quantity">1 x Rp2.899.000</span>
-                        </div>
-                    </li>
-                </ul>
+                <ul class="minicart-list"></ul>
             </div>
             <div class="minicart-item_total">
                 <span>Subtotal</span>
-                <span class="ammount" id="subtotal">Rp. 0</span>
+                <span class="ammount" id="subtotal">Rp 0</span>
             </div>
             <div class="minicart-btn_area">
                 <a href="cart" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>

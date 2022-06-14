@@ -52,21 +52,22 @@ Route::get('/myaccount', function () {
 // Route::get('/checkout', function () {
 //     return view('checkout');
 // });
+Route::middleware(['auth.user', 'auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+    Route::get('/brands/{name}', [HomeController::class, 'products'])->name('products');
+    Route::get('/category/{catalog}', [HomeController::class, 'category'])->name('category');
+    Route::get('cart', [CartController::class, 'index'])->name('cart');
+    Route::get('/wishlist', [HomeController::class, 'wishlist'])->name('wishlist');
+    Route::get('/detail/{name}', [HomeController::class, 'detail'])->name('detail');
+    Route::get('/data-cart', [HomeController::class, 'cart'])->name('getDataCart');
+    Route::get('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add-to-cart');
+    Route::delete('remove-from-cart/{id}', [HomeController::class, 'removeFromCart'])->name('remove-from-cart');
+});
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
-Route::get('/brands/{name}', [HomeController::class, 'products'])->name('products');
-Route::get('/category/{catalog}', [HomeController::class, 'category'])->name('category');
-// Route::get('/cart', [CartController::class, 'index'])->name('cart');
-Route::get('/wishlist', [HomeController::class, 'wishlist'])->name('wishlist');
-Route::get('/detail/{name}', [HomeController::class, 'detail'])->name('detail');
-Route::get('/data-cart', [HomeController::class, 'cart'])->name('getDataCart');
-Route::get('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add-to-cart');
-Route::delete('remove-from-cart/{id}', [HomeController::class, 'removeFromCart'])->name('remove-from-cart');
-
-Route::get('cart', [ProductController::class, 'cart'])->name('cart');
-Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
-Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
+// Route::get('cart', [ProductController::class, 'cart'])->name('cart');
+// Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
+// Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
 
 // Admin
