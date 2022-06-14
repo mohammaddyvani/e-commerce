@@ -70,7 +70,7 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 
 
 // Admin
-Route::middleware('auth.admin')->group(function(){
+Route::middleware(['auth.admin', 'auth'])->group(function(){
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
     Route::get('/datatransaction', [AdminController::class, 'datatransaction'])->name('datatransaction');

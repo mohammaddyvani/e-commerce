@@ -18,9 +18,9 @@ class AdminAuthenticated
     public function handle(Request $request, Closure $next, ...$guards)
     {
         if (Auth::guard($guards)->check()) {
-            if(Auth::user()->role !== 'admin') {
+            if(Auth::user()->role->name !== 'admin') {
                 return redirect()->route('home');
-            }
+            } 
 
             return $next($request);
         }

@@ -61,10 +61,10 @@
                                         <td style="font-weight : 700">:</td>
                                         <td style="padding-left: 10px"><span>{{ $detailProduct['des_CPU'] }}</span></td>
                                     </tr>
-                                    <tr>
-                                        <td style="font-weight : 700">Price</td>
-                                        <td style="font-weight : 700">:</td>
-                                        <td style="padding-left: 10px"><span>Rp{{ number_format($detailProduct['price']) }}</span></td>
+                                    <tr style="font-size: 30px; color: #0c2a5c">
+                                        <td></td>
+                                        <td></td>
+                                        <td style="padding-left: 10px; font-weight: 700; padding-top: 25px;"><span>Rp{{ number_format($detailProduct['price']) }}</span></td>
                                     </tr>
                                 </table>
                             </div>
