@@ -55,6 +55,7 @@
                                 <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
                                         <li><a href="/login">Login</a></li>
+                                        <li><a href="/logout">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -80,12 +81,6 @@
                                     <ul class="hm-megamenu" style="width: auto">
                                         <li><span class="megamenu-title">Category</span>
                                             <ul>
-                                                {{-- @foreach (getBrands() as $item)
-                                                    <li>
-                                                        <a
-                                                            href="({{ route('products', $item->name) }})">{{ $item->name }}</a>
-                                                    </li>
-                                                @endforeach --}}
                                                 <li>
                                                     <a href="{{ route('category', 'smartphone') }}">Smartphone</a>
                                                 </li>
