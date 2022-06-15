@@ -22,17 +22,9 @@ Route::get('/error', function () {
     return view('error404');
 });
 
-// Route::get('/admin', function () {
-//     return view('admin.pages.dasboard');
-// });
-
 Route::get('/login', function () {
     return view('login');
 });
-
-// Route::get('/table', function () {
-//     return view('admin.pages.datauser');
-// });
 
 Route::get('/cart', function () {
     return view('cart');
@@ -46,12 +38,18 @@ Route::get('/aboutus', function () {
     return view('abouts');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/myaccount', function () {
     return view('myaccount');
 });
+
 // Route::get('/checkout', function () {
 //     return view('checkout');
 // });
+
 Route::middleware(['auth.user', 'auth'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');

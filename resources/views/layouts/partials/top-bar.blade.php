@@ -26,8 +26,8 @@
                             </ul>
                             </li>
                             <li><a href="/#special">Specials</a></li>
-                            <li class=""><a href="about-us.html">About Us</a></li>
-                            <li class=""><a href="contact.html">Contact</a></li>
+                            <li class=""><a href="/aboutus">About Us</a></li>
+                            <li class=""><a href="/contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -54,8 +54,8 @@
                                 </li>
                                 <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
-                                        <li><a href="/login">Login</a></li>
-                                        <li><a href="/logout">Logout</a></li>
+                                        {{-- <li><a href="/login">Login</a></li> --}}
+                                        <li><a href="{{ route('logout') }}">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
