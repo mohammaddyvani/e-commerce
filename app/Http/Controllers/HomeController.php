@@ -106,7 +106,7 @@ class HomeController extends Controller
         $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
-            'data' => $transaction->detailTransaction()->with('product')->get() ?? [],
+            'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
         ];
 
         return response()->json($data);
@@ -122,42 +122,6 @@ class HomeController extends Controller
 
         return view('cart', $data);
     }
-
-    // public function addToBigCart($id)
-    // {
-    //     try {
-    //         $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
-
-    //         if ($transaction->count() > 0) {
-    //             $transaction = $transaction->first();
-    //         } else {
-    //             $transaction = Transaction::create([
-    //                 'status' => 'pending',
-    //             ]);
-    //         }
-
-    //         $produk = Product::find($id);
-    //         $check = DetailTransaction::where(['id_transaction' => $transaction->id, 'id_product' => $id]);
-
-    //         if ($check->count() <= 0) {
-    //             DetailTransaction::create([
-    //                 'id_transaction' => $transaction->id,
-    //                 'id_product' => $id,
-    //                 // 'quantity' => 1,
-    //                 'price' => $produk->price,
-    //             ]);
-    //             // ]);
-    //         }
-    //         return response()->json([
-    //             'message' => 'Data telah ditambahkan'
-    //         ]);
-    //     } catch (Exception $e) {
-    //         return response()->json([
-    //             'message' => $e->getMessage()
-    //         ], 500);
-    //     }
-    // }
-
     public function addToCart($id)
     {
         try {

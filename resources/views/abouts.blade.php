@@ -15,7 +15,8 @@
                 <div class="col-lg-6 col-md-7 d-flex align-items-center">
                     <div class="overview-content">
                         <h2>Welcome To <span>Uren's</span> Store!</h2>
-                        <p class="short_desc">We Provide Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        <p class="short_desc">Melayani pembelian berbagai macam handphone beserta accessories. 
+                            We Provide Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                             Repudiandae nisi fuga facilis, consequuntur, maiores eveniet voluptatum, omnis possimus
                             temporibus aspernatur nobis animi in exercitationem vitae nulla! Adipisci ullam illum quisquam.
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nulla veniam? Magni aliquid
@@ -94,7 +95,7 @@
                 </div>
             </div> <!-- section title end -->
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="mx-auto col-lg-4 col-md-6 col-sm-6">
                     <div class="team-member">
                         <div class="team-thumb img-hover_effect">
                             <a href="#">
@@ -137,7 +138,7 @@
                         </div>
                     </div>
                 </div> <!-- end single team member -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="mx-auto col-lg-4 col-md-6 col-sm-6">
                     <div class="team-member">
                         <div class="team-thumb img-hover_effect">
                             <a href="#">

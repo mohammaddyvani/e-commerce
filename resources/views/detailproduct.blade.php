@@ -212,40 +212,6 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        {{-- <h2>Write a review</h2>
-                                        <div class="form-group required">
-                                            <div class="col-sm-12 p-0">
-                                                <label>Your Email <span class="required">*</span></label>
-                                                <input class="review-input" type="email" name="con_email" id="con_email" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group required second-child">
-                                            <div class="col-sm-12 p-0">
-                                                <label class="control-label">Share your opinion</label>
-                                                <textarea class="review-textarea" name="con_message" id="con_message"></textarea>
-                                                <div class="help-block"><span class="text-danger">Note:</span> HTML is not
-                                                    translated!</div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group last-child required">
-                                            <div class="col-sm-12 p-0">
-                                                <div class="your-opinion">
-                                                    <label>Your Rating</label>
-                                                    <span>
-                                                <select class="star-rating">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </span>
-                                                </div>
-                                            </div>
-                                            <div class="uren-btn-ps_right">
-                                                <button class="uren-btn-2">Continue</button>
-                                            </div>
-                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
