@@ -52,9 +52,10 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="my-account.html">My Account<i class="fa fa-chevron-down"></i></a>
+                                <li><a>My Account<i class="fa fa-chevron-down"></i></a>
                                     <ul class="ht-dropdown ht-my_account">
-                                        <li><a href="/login">Login</a></li>
+                                        <li><a href="login">Login</a></li>
+                                        <li><a href="logout">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -80,12 +81,6 @@
                                     <ul class="hm-megamenu" style="width: auto">
                                         <li><span class="megamenu-title">Category</span>
                                             <ul>
-                                                {{-- @foreach (getBrands() as $item)
-                                                    <li>
-                                                        <a
-                                                            href="({{ route('products', $item->name) }})">{{ $item->name }}</a>
-                                                    </li>
-                                                @endforeach --}}
                                                 <li>
                                                     <a href="{{ route('category', 'smartphone') }}">Smartphone</a>
                                                 </li>
@@ -209,7 +204,7 @@
                 <span class="ammount" id="subtotal">Rp 0</span>
             </div>
             <div class="minicart-btn_area">
-                <a href="cart" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
+                <a href="{{ route('bigcart') }}" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
             </div>
             <div class="minicart-btn_area">
                 <a href="checkout" class="uren-btn uren-btn_dark uren-btn_fullwidth">Checkout</a>
@@ -327,13 +322,16 @@
                                     Setting</span></a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="my-account.html">
+                                    <a>
                                         <span class="mm-text">My Account</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="login-register.html">
-                                        <span class="mm-text">Login | Register</span>
+                                    <a href="login">
+                                        <span class="mm-text">Login</span>
+                                    </a>
+                                    <a href="logout">
+                                        <span class="mm-text">Logout</span>
                                     </a>
                                 </li>
                             </ul>

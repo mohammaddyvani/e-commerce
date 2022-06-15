@@ -65,7 +65,7 @@
                                                 </div>
                                                 <div class="add-actions">
                                                     <ul>
-                                                        <li><a class="uren-add_cart" href="{{ route('add-to-cart', $item->id) }}" data-toggle="tooltip"
+                                                        <li><a class="uren-add_cart add-to-cart" href="{{ route('add-to-cart', $item->id) }}" data-toggle="tooltip"
                                                                 data-placement="top" title="Add To Cart"><i
                                                                     class="ion-bag"></i></a>
                                                         </li>

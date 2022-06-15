@@ -19,11 +19,11 @@ async function loadCart(){
                     <li class="minicart-product">
                         <a class="product-item_remove remove-from-cart" href="/remove-from-cart/${val.id}"><i class="ion-android-close"></i></a>
                         <div class="product-item_img">
-                            <img src="assets/images/product/${val.product.image}" alt="Uren's Product Image">
+                            <img src="${$('meta[name="base_url"]').attr('content')}/${val.product.image}" alt="Uren's Product Image">
                         </div>
                         <div class="product-item_content">
                             <a class="product-item_title" href="shop-left-sidebar.html">${val.product.name}</a>
-                            <span class="product-item_quantity">${val.quantity} x ${number_format(parseInt(val.product.price) * parseInt(val.quantity))}</span>
+                            <span class="product-item_quantity">${val.quantity} x ${number_format(parseInt(val.product.price))}</span>
                         </div>
                     </li>`
 
@@ -31,7 +31,7 @@ async function loadCart(){
         })
 
         $('.minicart-list').html(render)
-        $('#subtotal').html(`Rp. ${number_format(subtotal)}`)
+        $('#subtotal').html(`Rp${number_format(subtotal)}`)
 
         $('.remove-from-cart').unbind().on('click', async function(e){
             e.preventDefault()
@@ -53,6 +53,7 @@ async function loadCart(){
     }
 }
 
+
 $('.add-to-cart').unbind().on('click', async function(e){
     e.preventDefault()
     var url = $(this).attr('href')
@@ -65,6 +66,15 @@ $('.add-to-cart').unbind().on('click', async function(e){
         alert('Opps! terjadi kesalahan')
     }
 })
+
+function totalCart(){
+    var total = 0
+    $('.cart-item').each(function(){
+        total += parseInt($(this).attr('data-price')) * parseInt($(this).attr('data-quantity'))
+    })
+
+    return total
+}
 
 function number_format(val){
     var number_string = val.toString(),
@@ -79,3 +89,7 @@ function number_format(val){
 
     return rupiah;
 }
+
+// function base_url(){
+//     return window.location.origin
+// }
