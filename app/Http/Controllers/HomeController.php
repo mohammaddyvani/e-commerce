@@ -104,7 +104,7 @@ class HomeController extends Controller
         $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
-            'data' => $transaction->detailTransaction()->with('product')->get() ?? [],
+            'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
         ];
 
         return response()->json($data);
