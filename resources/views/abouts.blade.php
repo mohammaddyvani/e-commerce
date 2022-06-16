@@ -74,7 +74,7 @@
                             <span class="ion-happy-outline"></span>
                         </div>
                         <div class="count-title">
-                            <h2 class="count">2169</h2>
+                            <h2 class="count">1000</h2>
                             <span>Happy Customer</span>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="team-content text-center">
                             <h3>Mohammad Dyvani Wahyu Wildana</h3>
-                            <p>IT Expert</p>
+                            <p>Web Designer</p>
                             <a href="#">info@example.com</a>
                             <div class="uren-social_link">
                                 <ul>

@@ -36,7 +36,7 @@
         <div class="footer-middle_area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 mx-auto">
                         <div class="footer-widgets_info">
                             <div class="footer-widgets_logo">
                                 <a href="#">
@@ -44,13 +44,13 @@
                                 </a>
                             </div>
                             <div class="widget-short_desc">
-                                <p>We are a team of designers and developers that create high quality HTML Template &
+                                <p>Kami melayani pembelian Smartphone dan Accesories. We are a team of designers and developers that create high quality HTML Template &
                                     Woocommerce, Shopify Theme.
                                 </p>
                             </div>
                             <div class="widgets-essential_stuff">
                                 <ul>
-                                    <li class="uren-address"><span>Address:</span> Jalan Raya Jember No.KM13 Kawang (68461), Labanasem, Kabat - Banyuwangi</li>
+                                    <li class="uren-address"><span>Address:</span> <a href="">Jalan Raya Jember No.KM13 Kawang (68461), Labanasem, Kabat - Banyuwangi</a></li>
                                     <li class="uren-phone"><span>Call
                                             Us:</span> <a href="tel://+62430019256">+6283 - 300 - 192 - 5196</a>
                                     </li>
@@ -87,10 +87,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="footer-widgets_area">
+                    <div class="col-lg-7">
+                        <div class="footer-widgets_area mx-auto">
                             <div class="row">
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-4 col-md-6">
                                     <div class="footer-widgets_title">
                                         <h3>Information</h3>
                                     </div>
@@ -103,7 +103,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-4 col-md-6">
                                     <div class="footer-widgets_title">
                                         <h3>Customer Service</h3>
                                     </div>
@@ -115,20 +115,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="footer-widgets_title">
-                                        <h3>Extras</h3>
-                                    </div>
-                                    <div class="footer-widgets">
-                                        <ul>
-                                            <li><a href="javascript:void(0)">About Us</a></li>
-                                            <li><a href="javascript:void(0)">Delivery Information</a></li>
-                                            <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-4 col-md-6">
                                     <div class="footer-widgets_title">
                                         <h3>My Account</h3>
                                     </div>
@@ -137,7 +124,6 @@
                                             <li><a href="javascript:void(0)">My Account</a></li>
                                             <li><a href="javascript:void(0)">Order History</a></li>
                                             <li><a href="javascript:void(0)">Wish List</a></li>
-                                            <li><a href="javascript:void(0)">Newsletter</a></li>
                                         </ul>
                                     </div>
                                 </div>
