@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\DetailTransaction;
+use App\Models\Address;
 use Illuminate\Support\Facades\Auth;
 use Exception;
 
@@ -79,10 +80,21 @@ class HomeController extends Controller
 
     public function checkout()
     {
+        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
         $data = [
+            'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
+            'data' => $transaction->detailTransaction()->with('product')->get() ?? [],
             'products' => Product::all(),
+            'country' => Address::all(),
+            'action' => '/insertaddress',
         ];
         return view('checkout', $data);
+    }
+
+    public function insertaddress(Request $request){
+        Address::create($request->only('name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone'));
+
+        return redirect('/checkout');
     }
 
 

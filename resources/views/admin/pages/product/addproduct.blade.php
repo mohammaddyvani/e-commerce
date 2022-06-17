@@ -44,7 +44,7 @@
                                         <label for="selectbrands" class="form-label">Brands</label>
                                         <select class="form-select form-control" name="brand_id"
                                             aria-label="Default select example">
-                                            <option selected>Select Brands</option>
+                                            <option selected>Select Brands</option> 
                                             @foreach ($brands as $item)
                                                 <option value="{{ $item->id }}"
                                                     {{ isset($products) && $products->brand_id == $item->id ? 'Selected' : '' }}>

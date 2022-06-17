@@ -1,38 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    
     <!-- Begin Uren's Checkout Area -->
     <div class="checkout-area">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="coupon-accordion">
-                        <h3>Returning customer? <span id="showlogin">Click here to login</span></h3>
-                        <div id="checkout-login" class="coupon-content">
-                            <div class="coupon-info">
-                                <p class="coupon-text">Quisque gravida turpis sit amet nulla posuere lacinia. Cras sed est
-                                    sit amet ipsum luctus.</p>
-                                <form action="javascript:void(0)">
-                                    <p class="form-row-first">
-                                        <label>Username or email <span class="required">*</span></label>
-                                        <input type="text">
-                                    </p>
-                                    <p class="form-row-last">
-                                        <label>Password <span class="required">*</span></label>
-                                        <input type="text">
-                                    </p>
-                                    <p class="form-row">
-                                        <input value="Login" type="submit">
-                                        <label>
-                                            <input type="checkbox">
-                                            Remember me
-                                        </label>
-                                    </p>
-                                    <p class="lost-password"><a href="javascript:void(0)">Lost your password?</a></p>
-                                </form>
-                            </div>
-                        </div>
                         <h3>Have a coupon? <span id="showcoupon">Click here to enter your code</span></h3>
                         <div id="checkout_coupon" class="coupon-checkout-content">
                             <div class="coupon-info">
@@ -49,80 +23,79 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <form action="javascript:void(0)">
+                    <form action="{{ $action }}" method="POST">
+                        @csrf
                         <div class="checkbox-form">
                             <h3>Billing Details</h3>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="country-select clearfix">
                                         <label>Country <span class="required">*</span></label>
-                                        <select class="myniceselect nice-select wide">
-                                            <option data-display="Bangladesh">Bangladesh</option>
-                                            <option value="uk">London</option>
-                                            <option value="rou">Romania</option>
-                                            <option value="fr">French</option>
-                                            <option value="de">Germany</option>
-                                            <option value="aus">Australia</option>
+                                        <select class="myniceselect nice-select wide" name="country">
+                                            <option data-display="Select Country">Select Country</option>
+                                            <option value="Indonesia">Indonesia</option>
+                                            <option value="Malaysia">Malaysia</option>
+                                            <option value="Singapore">Singapore</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>First Name <span class="required">*</span></label>
-                                        <input placeholder="" type="text">
+                                        <input placeholder="First Name" name="firstname" type="text">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Last Name <span class="required">*</span></label>
-                                        <input placeholder="" type="text">
+                                        <input placeholder="Last Name" name="lastname" type="text">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <label>Company Name</label>
                                         <input placeholder="" type="text">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <label>Address <span class="required">*</span></label>
-                                        <input placeholder="Street address" type="text">
+                                        <textarea placeholder="Street address" rows="2" name="address" class="form-control" ></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <label>Town / City <span class="required">*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="city">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>State / County <span class="required">*</span></label>
-                                        <input placeholder="" type="text">
+                                        <input placeholder="" type="text" name="county">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Postcode / Zip <span class="required">*</span></label>
-                                        <input placeholder="" type="text">
+                                        <input placeholder="" type="text" name="postal_code">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Email Address <span class="required">*</span></label>
-                                        <input placeholder="" type="email">
+                                        <input placeholder="" type="email" name="email">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="phone">
                                     </div>
                                 </div>
                                 {{-- <div class="col-md-12">
@@ -242,26 +215,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                    $subtotal = 0; $discount = 0; $totalpay = 0;    
+                                    @endphp
+                                    @foreach ($data as $item)
                                     <tr class="cart_item">
-                                        <td class="cart-product-name"> Vestibulum suscipit<strong class="product-quantity">
-                                        × 1</strong></td>
-                                        <td class="cart-product-total"><span class="amount">£165.00</span></td>
-                                    </tr>
-                                    <tr class="cart_item">
-                                        <td class="cart-product-name"> Vestibulum suscipit<strong class="product-quantity">
-                                        × 1</strong></td>
-                                        <td class="cart-product-total"><span class="amount">£165.00</span></td>
-                                    </tr>
+                                        <td class="cart-product-name"> {{ $item->product->name }}<strong class="product-quantity">
+                                                × {{ $item->quantity }}</strong></td>
+                                        <td class="cart-product-total"><span class="amount">Rp{{ number_format($item->price) }}</span></td>
+                                        @php $subtotal += $item['price'] * $item->quantity; $discount += $item->product->discount; $totalpay = $subtotal - $discount;@endphp
+                                    </tr>                       
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
+                                    {{-- @foreach ($data as $item) --}}
                                     <tr class="cart-subtotal">
                                         <th>Cart Subtotal</th>
-                                        <td><span class="amount">£215.00</span></td>
+                                        <td><span class="amount">Rp. {{ number_format($subtotal, 0, ',', '.') }}</span></td>
+                                    </tr>
+                                    <tr class="cart-subtotal">
+                                        <th>Discount</th>
+                                        <td><span class="amount">Rp. {{ number_format($discount, 0, ',', '.') }}</span></td>
                                     </tr>
                                     <tr class="order-total">
                                         <th>Order Total</th>
-                                        <td><strong><span class="amount">£215.00</span></strong></td>
+                                        <td><strong><span class="amount">Rp. {{ number_format($totalpay, 0, ',', '.') }}</span></strong></td>
                                     </tr>
+                                        
+                                    {{-- @endforeach --}}
                                 </tfoot>
                             </table>
                         </div>
@@ -271,9 +252,19 @@
                                     <div class="card">
                                         <div class="card-header" id="#payment-1">
                                             <h5 class="panel-title">
-                                                <a href="javascript:void(0)" class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <label data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <a>
+                                                        <input type="radio" name="payment">
+                                                        <span>Direct Bank Transfer</span>
+                                                        <i class="fas fa-credit-card ml-2"></i>
+                                                    </a>
+                                                </label>
+                                                {{-- <a class="" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                <input type="radio" name="payment">
                                                     Direct Bank Transfer.
-                                                </a>
+                                                </a> --}}
                                             </h5>
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordion">
@@ -288,9 +279,18 @@
                                     <div class="card">
                                         <div class="card-header" id="#payment-2">
                                             <h5 class="panel-title">
-                                                <a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <label class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <a>
+                                                        <input type="radio" name="payment">
+                                                        <span>Cash on Delivery</span>
+                                                        <i class="fas fa-truck ml-2"></i>
+                                                    </a>
+                                                </label>
+                                                {{-- <a href="javascript:void(0)" class="collapsed" data-toggle="collapse"
+                                                    data-target="#collapseTwo" aria-expanded="false"
+                                                    aria-controls="collapseTwo">
                                                     Cheque Payment
-                                                </a>
+                                                </a> --}}
                                             </h5>
                                         </div>
                                         <div id="collapseTwo" class="collapse" data-parent="#accordion">
@@ -302,10 +302,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card">
+                                    {{-- <div class="card">
                                         <div class="card-header" id="#payment-3">
                                             <h5 class="panel-title">
-                                                <a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <a href="javascript:void(0)" class="collapsed" data-toggle="collapse"
+                                                    data-target="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree">
                                                     PayPal
                                                 </a>
                                             </h5>
@@ -318,7 +320,7 @@
                                                     our account.</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="order-button-payment">
                                     <input value="Place order" type="submit">
@@ -331,6 +333,4 @@
         </div>
     </div>
     <!-- Uren's Checkout Area End Here -->
-
-
 @endsection

@@ -22,17 +22,17 @@ Route::get('/error', function () {
     return view('error404');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
 
-Route::get('/detail', function () {
-    return view('detailproduct');
-});
+// Route::get('/detail', function () {
+//     return view('detailproduct');
+// });
 
 Route::get('/aboutus', function () {
     return view('abouts');
@@ -53,6 +53,7 @@ Route::get('/myaccount', function () {
 Route::middleware(['auth.user', 'auth'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
+    Route::post('insertaddress', [HomeController::class, 'insertaddress'])->name('insertaddress');
     Route::get('brands/{name}', [HomeController::class, 'products'])->name('products');
     Route::get('category/{catalog}', [HomeController::class, 'category'])->name('category');
     Route::get('cart', [HomeController::class, 'cart'])->name('cart');

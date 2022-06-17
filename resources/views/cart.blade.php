@@ -30,8 +30,8 @@
                                             <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
-                                    <td class="uren-product-thumbnail"><a href="#"><img src="{{ asset('assets/images/product/' . $item->product->image) }}" alt="Uren's Cart Thumbnail"></a></td>
-                                    <td class="uren-product-name"><a href="javascript:void(0)">{{ $item->product->name }}</a></td>
+                                    <td class="uren-product-thumbnail"><a><img src="{{ asset('assets/images/product/' . $item->product->image) }}" alt="Uren's Cart Thumbnail"></a></td>
+                                    <td class="uren-product-name"><a href="">{{ $item->product->name }}</a></td>
                                     <td class="uren-product-price"><span class="amount">Rp{{ number_format($item['price']) }}</span></td>
                                     <td class="quantity" width="200">
                                         <form action="{{ route('update-qty', $item->id) }}" method="post">
@@ -73,7 +73,7 @@
                                     <li>Diskon <span>Rp. 0</span></li>
                                     <li>Total <span>Rp. {{ number_format($subtotal, 0, ',', '.') }}</span></li>
                                 </ul>
-                                <a href="javascript:void(0)">Proceed to checkout</a>
+                                <a href="{{ route('checkout')}}">Proceed to checkout</a>
                             </div>
                         </div>
                     </div>

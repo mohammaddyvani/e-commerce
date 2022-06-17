@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string("city");
             $table->string("districts");
             $table->string("province");
-            $table->string("country");
+            $table->enum("country", ["Indonesia", "Malaysia", "Singapore"]);
             $table->string("postal_code");
             $table->string("email");
             $table->string("phone");
