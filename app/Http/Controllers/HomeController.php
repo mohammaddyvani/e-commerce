@@ -92,6 +92,8 @@ class HomeController extends Controller
     }
 
     public function insertaddress(Request $request){
+        $request->merge(['name' => $request->firstname . ' ' . $request->lastname]);
+
         Address::create($request->only('name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone'));
 
         return redirect('/checkout');
