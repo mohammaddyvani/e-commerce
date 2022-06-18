@@ -25,9 +25,9 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('assetsAdmin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('assetsAdminplugins/daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
-    <link rel="stylesheet" href="{{ asset('assetsAdminplugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin/plugins/summernote/summernote-bs4.min.css') }}">
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('assetsAdmin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet"
@@ -61,7 +61,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
                     </a>
@@ -81,7 +81,7 @@
                             </div>
                         </form>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Messages Dropdown Menu -->
                 {{-- <li class="nav-item dropdown">
@@ -148,7 +148,7 @@
                     </div>
                 </li> --}}
                 <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
                         <span class="badge badge-warning navbar-badge">15</span>
@@ -173,7 +173,7 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -262,7 +262,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin" class="nav-link">
+                                    <a href="{{ route('dataselling') }}" class="nav-link">
                                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                                         <p>Penjualan</p>
                                     </a>
@@ -274,6 +274,12 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Keluar</p>
+                            </a>
                         </li>
                         {{-- <li class="nav-item">
                             <a href="" class="nav-link">
@@ -907,9 +913,6 @@
         <footer class="main-footer">
             <strong>Copyright &copy; 2022 <a href="#">Uren</a>.</strong>
             All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0
-            </div>
         </footer>
 
         <!-- Control Sidebar -->
@@ -964,10 +967,6 @@
     <script src="{{ asset('assetsAdmin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assetsAdmin/dist/js/adminlte.js') }}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    {{-- <script src="{{ asset('assetsAdmin/dist/js/pages/dashboard.js') }}"></script> --}}
-    {{-- <script src="{{ asset('assetsAdmin/dist/js/demo.js') }}"></script> --}}
     <!-- Dropify -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"
         integrity="sha512-8QFTrG0oeOiyWo/VM9Y8kgxdlCryqhIxVeRpWSezdRRAvarxVtwLnGroJgnVW9/XBRduxO/z1GblzPrMQoeuew=="

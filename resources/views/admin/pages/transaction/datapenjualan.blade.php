@@ -13,12 +13,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Master Data</h1>
+                        <h1 class="m-0">Transaksi</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                            <li class="breadcrumb-item active">Data Produk</li>
+                            <li class="breadcrumb-item active">Data Penjualan</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -34,11 +34,11 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <h3 class="card-title my-auto">Data Produk</h3>
-                                    <a href="/addproduct">
+                                    <h3 class="card-title my-auto">Data Penjualan</h3>
+                                    {{-- <a href="/addproduct">
                                         <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
                                             Produk</button>
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -47,25 +47,25 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
+                                            <th>Nama Pembeli</th>
                                             <th>Nama Produk</th>
-                                            <th>Brand</th>
-                                            <th>Kategori</th>
-                                            <th>Harga</th>
-                                            <th>Stok</th>
-                                            <th>Diskon</th>
+                                            <th>Jumlah</th>
+                                            <th>Alamat</th>
+                                            <th>Jenis Pembayaran</th>
+                                            <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($products as $item)
+                                        @foreach ($transactions as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->brand->name }}</td>
-                                                <td>{{ $item->catalog }}</td>
-                                                <td>Rp{{ number_format($item->price, 0, ',', '.') }}</td>
-                                                <td>{{ $item->stock }}</td>
-                                                <td>{{ $item->discount }}</td>
+                                                <td>{{ $item->address->name }}</td>
+                                                <td>{{ $item->detailtransaction->product->name }}</td>
+                                                <td>{{ $item->detailtransaction->quantity }}</td>
+                                                <td>{{ $item->address->address }}</td>
+                                                <td>{{ $item->payment_method }}</td>
+                                                <td>{{ $item->status }}</td>
                                                 <td>
                                                     <a href="{{ route('editproduct', $item->id) }}"
                                                         class="btn btn-warning btn-sm">Edit</a>

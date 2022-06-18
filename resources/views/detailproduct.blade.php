@@ -64,7 +64,7 @@
                                     <tr style="font-size: 30px; color: #0c2a5c">
                                         <td></td>
                                         <td></td>
-                                        <td style="padding-left: 10px; font-weight: 700; padding-top: 25px;"><span>Rp{{ number_format($detailProduct['price']) }}</span></td>
+                                        <td style="padding-left: 10px; font-weight: 700; padding-top: 25px;"><span>Rp. {{ number_format($detailProduct->price, 0, ',', '.') }}</span></td>
                                     </tr>
                                 </table>
                             </div>

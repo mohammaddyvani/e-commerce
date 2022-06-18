@@ -9,6 +9,8 @@ use App\Models\DetailTransaction;
 use App\Models\Address;
 use Illuminate\Support\Facades\Auth;
 use Exception;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -83,7 +85,7 @@ class HomeController extends Controller
         $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
-            'data' => $transaction->detailTransaction()->with('product')->get() ?? [],
+            'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
             'products' => Product::all(),
             'country' => Address::all(),
             'action' => '/insertaddress',
@@ -92,11 +94,24 @@ class HomeController extends Controller
     }
 
     public function insertaddress(Request $request){
-        $request->merge(['name' => $request->firstname . ' ' . $request->lastname]);
+        $request->merge(['name' => $request->firstname .' '. $request->lastname]);
+        $address = Address::create($request->only(['name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone']));
+        Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->update([
+            'id_address' => $address->id,
+            'status' => 'packed',
+            'total_price' => $request->total_price,
+            'total_payment' => $request->total_payment
+        ]);
 
-        Address::create($request->only('name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone'));
+        return redirect('/myaccount');
+    }
 
-        return redirect('/checkout');
+    public function updateaddress(Request $request){
+        $request->merge(['name' => $request->firstname .' '. $request->lastname]);
+        $data = Address::find($request->id);
+        Address::where('id', $request->id)->update($request->only(['name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone']));
+
+        return redirect('/myaccount');
     }
 
 
@@ -131,7 +146,7 @@ class HomeController extends Controller
         $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
-            'data' => $transaction->detailTransaction()->with('product')->get() ?? [],
+            'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
         ];
 
         return view('cart', $data);
@@ -145,6 +160,7 @@ class HomeController extends Controller
                 $transaction = $transaction->first();
             } else {
                 $transaction = Transaction::create([
+                    'id_user' => Auth::user()->id,
                     'status' => 'pending'
                 ]);
             }
@@ -216,4 +232,61 @@ class HomeController extends Controller
             return redirect()->back()->withErrors(['message' => $e->getMessage()]);
         }
     }
+
+    public function myaccount(){
+        $data = [
+            'user' => User::where('id', Auth::user()->id)->first(),
+            'default_address' => Address::where('id', Auth::user()->id)->latest(),
+            'transaction' => Transaction::where(['id_user' => Auth::user()->id])->get(),
+
+        ];
+
+        return view('myaccount', $data);
+    }
+
+    public function changepassword(Request $request){
+        $user = Auth::user();
+        
+        $request->validate([
+            'newpassword' => 'required',
+            'confrimnewpassword' => 'required|same:newpassword',
+        ]);
+
+        if(Hash::check($request->oldpassword, $user->password)){
+            $user->update([
+                'password' => Hash::make($request->newpassword),
+            ]);
+            return redirect()->back()->with('success', 'Password berhasil diubah');
+        }else{
+            return redirect()->back()->with('error', 'Password lama tidak sesuai');
+        }
+
+        return redirect()->back();
+    }
+
+    //Ganti Password V2
+    // public function changepassword(Request $request){
+    //     $user = Auth::user();
+        
+    //     $request->validate([
+    //         'newpassword' => 'required',
+    //         'confrimnewpassword' => 'required|same:newpassword',
+    //     ]);
+
+    //     if(Hash::check($request->oldpassword, $user->password)){
+    //         try {
+    //             User::where('id', $user->id)->update([
+    //                 'password' => Hash::make($request->newpassword),
+    //             ]);
+                
+    //             return redirect()->back()->with('success', 'Password berhasil diubah');
+    //         } catch(Exception $e){
+    //             return redirect()->back()->withErrors(['error' => 'Opps! error blokkk']);
+    //         }
+    //     }else{
+    //         return redirect()->back()->withErrors(['error' => 'Password lama tidak sesuai']);
+    //     }
+
+    //     return redirect()->back();
+    // }
 }

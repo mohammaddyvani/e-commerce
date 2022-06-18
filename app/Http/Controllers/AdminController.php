@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\User;
 use App\Models\Transaction;
 use App\Models\Address;
+use App\Models\DetailTransaction;
 use App\Models\Role;
 use File;
 
@@ -152,13 +153,14 @@ class AdminController extends Controller
         return redirect('/datauser');
     }
 
-    public function datatransaction()
+    public function dataselling()
     {
         $data = [
-            'transactions' => Transaction::all(),
+            DetailTransaction::all(),
             Address::all(),
+            'transactions' => Transaction::all(),
         ];
-        return view('admin.pages.datatransaction', $data);
+        return view('admin.pages.transaction.datapenjualan', $data);
     }
 }
 

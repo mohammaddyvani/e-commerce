@@ -14,4 +14,8 @@ class Transaction extends Model
     {
         return $this->hasMany(DetailTransaction::class, 'id_transaction');
     }
+
+    public function address(){
+        return $this->belongsTo(Address::class, 'id_address');
+    }
 }

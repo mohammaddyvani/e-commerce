@@ -29,7 +29,7 @@
                                                     alt="Uren's Wishlist Thumbnail"></a>
                                         </td>
                                         <td class="uren-product-name"><a href="javascript:void(0)">{{ $item['name'] }}</a></td>
-                                        <td class="uren-product-price"><span class="amount">Rp{{ number_format($item['price']) }}</span></td>
+                                        <td class="uren-product-price"><span class="amount">Rp{{ number_format($item->price, 0, ',', '.') }}</span></td>
                                         <td class="uren-product-stock-status"><span class="in-stock">in stock</span>
                                         </td>
                                         <td class="uren-cart_btn"><a href="javascript:void(0)">add to cart</a></td>

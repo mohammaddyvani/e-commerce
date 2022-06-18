@@ -31,20 +31,20 @@
                                         </form>
                                     </td>
                                     <td class="uren-product-thumbnail"><a><img src="{{ asset('assets/images/product/' . $item->product->image) }}" alt="Uren's Cart Thumbnail"></a></td>
-                                    <td class="uren-product-name"><a href="">{{ $item->product->name }}</a></td>
-                                    <td class="uren-product-price"><span class="amount">Rp{{ number_format($item['price']) }}</span></td>
+                                    <td class="uren-product-name"><a style="color: #343A40">{{ $item->product->name }}</a></td>
+                                    <td class="uren-product-price"><span class="amount">Rp. {{ number_format($item->price, 0, ',', '.') }}</span></td>
                                     <td class="quantity" width="200">
                                         <form action="{{ route('update-qty', $item->id) }}" method="post">
                                             @csrf
                                             <div class="input-group">
-                                                <input class="form-control" name="qty" value="{{ $item->quantity }}" type="number">
-                                                <div class="input-group-append">
+                                                <input class="form-control mx-2x rounded" name="qty" value="{{ $item->quantity }}" type="number">
+                                                <div class="input-group-append mx-2 rounded">
                                                     <button class="btn btn-primary" type="submit">Update</button>
                                                 </div>
                                             </div>
                                         </form>
                                     </td>
-                                    <td class="product-subtotal"><span class="amount">Rp{{ number_format($item['price'] * $item->quantity) }}</span></td>
+                                    <td class="product-subtotal"><span class="amount">Rp. {{ number_format($item->price * $item->quantity, 0 ,',', '.') }}</span></td>
                                     @php $subtotal += $item['price'] * $item->quantity; @endphp
                                 </tr>
                                 @endforeach
@@ -57,9 +57,6 @@
                                 <div class="coupon">
                                     <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
                                     <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
-                                </div>
-                                <div class="coupon2">
-                                    <input class="button" name="update_cart" value="Update cart" type="submit">
                                 </div>
                             </div>
                         </div>

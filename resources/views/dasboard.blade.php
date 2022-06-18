@@ -63,7 +63,7 @@
                                                                 class="ion-bag"></i></a>
                                                     </li>
                                                     <li class="quick-view-btn" data-toggle="modal"
-                                                        data-target="#exampleModalCenter"><a href="javascript:void(0)"
+                                                        data-target="#exampleModalCenter"><a href="{{ route('detail', $item->name) }}"
                                                             data-toggle="tooltip" data-placement="top" title="Quick View"><i
                                                                 class="ion-android-open"></i></a></li>
                                                 </ul>
@@ -84,7 +84,7 @@
                                                         href="single-product.html">{{ $item['name'] }}</a></h6>
                                                 <div class="price-box">
                                                     <span
-                                                        class="new-price">Rp{{ number_format($item['price']) }}</span>
+                                                        class="new-price">Rp. {{ number_format($item->price, 0, ',', '.') }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -165,7 +165,7 @@
                                                 </div>
                                                 <h6 class="product-name"><a href="single-product.html">{{ $item['name'] }}</a></h6>
                                                 <div class="price-box">
-                                                    <span class="new-price new-price-2">Rp{{ number_format($item['price']) }}</span>
+                                                    <span class="new-price new-price-2">Rp. {{ number_format($item->price, 0, ',', '.') }}</span>
                                                     <span class="old-price">Rp10,000,000</span>
                                                 </div>
                                                 <div class="add-actions">
@@ -175,7 +175,7 @@
                                                                     class="ion-bag"></i>Add To Cart</a>
                                                         </li>
                                                         <li class="quick-view-btn" data-toggle="modal"
-                                                            data-target="#exampleModalCenter"><a href="javascript:void(0)"
+                                                            data-target="#exampleModalCenter"><a href="{{ route('detail', $item->name) }}"
                                                                 data-toggle="tooltip" data-placement="top"
                                                                 title="Quick View"><i class="ion-android-open"></i></a></li>
                                                     </ul>
@@ -213,7 +213,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Apple">
                                             <img src="assets/images/brand/a1.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -222,7 +222,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Oppo">
                                             <img src="assets/images/brand/a2.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -231,7 +231,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Vivo">
                                             <img src="assets/images/brand/a3.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -240,7 +240,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Samsung">
                                             <img class="mt-2" src="assets/images/brand/a4.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -249,7 +249,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Infinix">
                                             <img src="assets/images/brand/a5.jpg" alt="Uren's Brand Image" width="100px">
                                         </a>
                                     </div>
@@ -258,7 +258,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Xiaomi">
                                             <img src="assets/images/brand/a6.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -267,7 +267,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Realme">
                                             <img class="mt-3" src="assets/images/brand/a7.jpg" alt="Uren's Brand Image">
                                         </a>
                                     </div>
@@ -276,7 +276,7 @@
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
-                                        <a href="javascript:void(0)">
+                                        <a href="brands/Oneplus">
                                             <img class="mt-3" src="assets/images/brand/a8.jpg" alt="Uren's Brand Image" width="120px">
                                         </a>
                                     </div>

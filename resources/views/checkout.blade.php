@@ -124,7 +124,7 @@
                                                         class="product-quantity">
                                                         × {{ $item->quantity }}</strong></td>
                                                 <td class="cart-product-total"><span
-                                                        class="amount">Rp{{ number_format($item->price) }}</span></td>
+                                                        class="amount">Rp. {{ number_format($item->price * $item->quantity, 0, ',', '.') }}</span></td>
                                                 @php
                                                     $subtotal += $item['price'] * $item->quantity;
                                                     $discount += $item->product->discount;
@@ -137,7 +137,7 @@
                                         {{-- @foreach ($data as $item) --}}
                                         <tr class="cart-subtotal">
                                             <th>Cart Subtotal</th>
-                                            <td><span class="amount">Rp.
+                                            <td na><span class="amount"><input type="hidden" name="total_price" value="{{ $subtotal }}">Rp.
                                                     {{ number_format($subtotal, 0, ',', '.') }}</span>
                                             </td>
                                         </tr>
@@ -149,7 +149,7 @@
                                         </tr>
                                         <tr class="order-total">
                                             <th>Order Total</th>
-                                            <td><strong><span class="amount">Rp.
+                                            <td><strong><span class="amount"><input type="hidden" name="total_payment" value="{{ $totalpay }}">Rp.
                                                         {{ number_format($totalpay, 0, ',', '.') }}</span></strong></td>
                                         </tr>
 
@@ -164,7 +164,7 @@
                                             <div class="card-header" id="#payment-1">
                                                 <h5 class="panel-title">
                                                     <label data-toggle="collapse" data-target="#collapseOne"
-                                                        aria-expanded="true" aria-controls="collapseOne">
+                                                        aria-expanded="false" aria-controls="collapseOne">
                                                         <a>
                                                             <input type="radio" name="paymet_method" value="Bank">
                                                             <span>Direct Bank Transfer</span>
@@ -173,7 +173,7 @@
                                                     </label>
                                                 </h5>
                                             </div>
-                                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                            <div id="collapseOne" class="collapse" data-parent="#accordion">
                                                 <div class="card-body">
                                                     <p>Make your payment directly into our bank account. Please use your
                                                         Order

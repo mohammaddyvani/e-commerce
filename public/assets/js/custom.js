@@ -23,7 +23,7 @@ async function loadCart(){
                         </div>
                         <div class="product-item_content">
                             <a class="product-item_title" href="shop-left-sidebar.html">${val.product.name}</a>
-                            <span class="product-item_quantity">${val.quantity} x ${number_format(parseInt(val.product.price))}</span>
+                            <span class="product-item_quantity">${val.quantity} x Rp. ${number_format(parseInt(val.product.price))}</span>
                         </div>
                     </li>`
 
@@ -31,7 +31,7 @@ async function loadCart(){
         })
 
         $('.minicart-list').html(render)
-        $('#subtotal').html(`Rp${number_format(subtotal)}`)
+        $('#subtotal').html(`Rp. ${number_format(subtotal)}`)
 
         $('.remove-from-cart').unbind().on('click', async function(e){
             e.preventDefault()

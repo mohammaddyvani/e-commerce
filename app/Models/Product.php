@@ -12,7 +12,12 @@ class Product extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
-    } 
+    }
+
+    public function detailtransaction()
+    {
+        return $this->hasMany(DetailTransaction::class);
+    }
 
     protected $guarded = [];
 }

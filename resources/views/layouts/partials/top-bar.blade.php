@@ -9,7 +9,8 @@
                             <ul>
                                 <li class="dropdown-holder"><a href="/">Home</a>
                                 </li>
-                                <li class="megamenu-holder "><a href="#">Shop <i class="ion-ios-arrow-down"></i></a>
+                                <li class="megamenu-holder "><a href="#">Shop <i
+                                            class="ion-ios-arrow-down"></i></a>
                                     <ul class="hm-megamenu" style="width: auto">
                                         <li><span class="megamenu-title">Category</span>
                                             <ul>
@@ -19,15 +20,14 @@
                                                 <li>
                                                     <a href="{{ route('category', 'accessories') }}">Accessories</a>
                                                 </li>
-                                            {{-- </ul> --}}
+                                                {{-- </ul> --}}
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                             </li>
-                            <li><a href="/#special">Specials</a></li>
-                            <li class=""><a href="/aboutus">About Us</a></li>
-                            <li class=""><a href="/contact">Contact</a></li>
+                            <li class=""><a href="aboutus">About Us</a></li>
+                            <li class=""><a href="contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -52,11 +52,20 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a>My Account<i class="fa fa-chevron-down"></i></a>
-                                    <ul class="ht-dropdown ht-my_account">
-                                        {{-- <li><a href="/login">Login</a></li> --}}
-                                        <li><a href="{{ route('logout') }}">Logout</a></li>
-                                    </ul>
+                                <li>
+                                    @if (Auth::user() != null)
+                                    <a>
+                                            <i class="fas fa-user-circle" style="font-size: 17px !important;"></i>
+                                            {{ Auth::user()->name }}
+                                            <i class="fa fa-chevron-down"></i>
+                                        </a>
+                                        <ul class="ht-dropdown ht-my_account">
+                                            <li><a href="{{ route('myaccount') }}">My Account</a></li>
+                                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                                        </ul>
+                                    @else
+                                        <a href="{{ route('auth') }}">Login</a>
+                                    @endif
                                 </li>
                             </ul>
                         </div>
@@ -91,16 +100,15 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="#special">Specials</a></li>
-                                <li class=""><a href="about-us.html">About Us</a></li>
-                                <li class=""><a href="contact.html">Contact</a></li>
+                                <li class=""><a href="aboutus">About Us</a></li>
+                                <li class=""><a href="contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="col-sm-3 d-block d-lg-none">
                     <div class="header-logo_area header-sticky_logo">
-                        <a href="index.html">
+                        <a href="/">
                             <img src="{{ asset('assets/images/menu/logo/1.png') }}" alt="Uren's Logo">
                         </a>
                     </div>
@@ -132,7 +140,7 @@
             <div class="row">
                 <div class="custom-logo_col col-12">
                     <div class="header-logo_area">
-                        <a href="index.html">
+                        <a href="/">
                             <img src="{{ asset('assets/images/menu/logo/1.png') }}" alt="Uren's Logo">
                         </a>
                     </div>
@@ -160,7 +168,8 @@
                             <select class="nice-select select-search-category">
                                 <option value="0">All Categories</option>
                                 @foreach (getBrands() as $item)
-                                    <option value="{{ route('products', $item->name) }}">{{ $item->name }}</option>
+                                    <option value="{{ route('products', $item->name) }}">{{ $item->name }}
+                                    </option>
                                 @endforeach
                                 <option value="16">Accessories</option>
                             </select>
@@ -201,7 +210,7 @@
             </div>
             <div class="minicart-item_total">
                 <span>Subtotal</span>
-                <span class="ammount" id="subtotal">Rp 0</span>
+                <span class="ammount" id="subtotal">Rp. 0</span>
             </div>
             <div class="minicart-btn_area">
                 <a href="{{ route('bigcart') }}" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
@@ -321,18 +330,10 @@
                                     class="mm-text">User
                                     Setting</span></a>
                             <ul class="sub-menu">
-                                <li>
-                                    <a>
-                                        <span class="mm-text">My Account</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="login">
-                                        <span class="mm-text">Login</span>
-                                    </a>
-                                    <a href="logout">
-                                        <span class="mm-text">Logout</span>
-                                    </a>
+                                <li><a>My Account<i class="fa fa-chevron-down"></i></a>
+                                    <ul class="ht-dropdown ht-my_account">
+                                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>

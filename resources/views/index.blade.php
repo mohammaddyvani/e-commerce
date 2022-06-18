@@ -62,7 +62,7 @@
                                     <div class="product-body">
                                         {{-- <p class="product-category">Category</p> --}}
                                         <h3 class="product-name"><a href="#">{{ $item['name'] }}</a></h3>
-                                        <h4 class="product-price">Rp. {{ number_format($item['price']) }}</h4>
+                                        <h4 class="product-price">Rp. {{ number_format($item->price, 0, ',', '.') }}</h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>

@@ -92,7 +92,7 @@
                                                             href="single-product.html">{{ $item['name'] }}</a></h6>
                                                     <div class="price-box">
                                                         <span
-                                                            class="new-price">Rp{{ number_format($item['price']) }}</span>
+                                                            class="new-price">Rp. {{ number_format($item->price, 0, ',', '.') }}</span>
                                                     </div>
                                                 </div>
                                             </div>

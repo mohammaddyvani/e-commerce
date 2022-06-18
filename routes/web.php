@@ -65,6 +65,8 @@ Route::middleware(['auth.user', 'auth'])->group(function () {
     Route::delete('remove-from-cart/{id}', [HomeController::class, 'removeFromCart'])->name('remove-from-cart');
     Route::delete('remove-from-bigcart/{id}', [HomeController::class, 'removeFromBigcart'])->name('remove-from-bigcart');
     Route::post('{id}/update-qty', [HomeController::class, 'updateQty'])->name('update-qty');
+    Route::get('myaccount', [HomeController::class, 'myaccount'])->name('myaccount');
+    Route::post('changepassword', [HomeController::class, 'changepassword'])->name('changepassword');
 });
 
 // Route::get('cart', [ProductController::class, 'cart'])->name('cart');
@@ -76,7 +78,7 @@ Route::middleware(['auth.user', 'auth'])->group(function () {
 Route::middleware(['auth.admin', 'auth'])->group(function(){
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
-    Route::get('/datatransaction', [AdminController::class, 'datatransaction'])->name('datatransaction');
+    Route::get('dataselling', [AdminController::class, 'dataselling'])->name('dataselling');
     Route::get('/addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
     Route::get('/adduser', [AdminController::class, 'adduser'])->name('adduser');
     Route::get('/editproduct/{id}', [AdminController::class, 'editproduct'])->name('editproduct');
