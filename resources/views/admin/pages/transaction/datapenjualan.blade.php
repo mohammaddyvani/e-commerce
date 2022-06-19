@@ -1,12 +1,6 @@
 @extends('admin.layouts.base')
 
 @section('content')
-    <div class="wrapper">
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('assetsAdmin/dist/img/2.png') }}" alt="UrenAdmin">
-        </div>
-    </div>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -61,16 +55,26 @@
                                             <tr>
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->address->name }}</td>
-                                                <td>{{ $item->detailtransaction->product->name }}</td>
-                                                <td>{{ $item->detailtransaction->quantity }}</td>
-                                                <td>{{ $item->address->address }}</td>
+                                                <td>
+                                                    @foreach ($item->detailTransaction as $product)
+                                                        <li>{{ $product->product->name }}</li>
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    @foreach ($item->detailTransaction as $product)
+                                                        <li>{{ $product->quantity }} pcs</li>
+                                                    @endforeach
+                                                </td>
+                                                <td>{{ $item->address->address . ' , ' . $item->address->districts . ' , ' . $item->address->city . ' , ' . $item->address->province . ' , ' . $item->address->country }}
+                                                </td>
                                                 <td>{{ $item->payment_method }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('editproduct', $item->id) }}"
-                                                        class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#modal" data-action="{{ route('deleteproduct', $item->id) }}"
-                                                        class="btn btn-danger btn-sm btn-delete">Delete</a>
+                                                    <a href="{{ route('detailorder', $item->id) }}"
+                                                        class="btn btn-warning btn-sm">Detail Orders</a>
+                                                    <a href="#modal"
+                                                        data-action="{{ route('deleteproduct', $item->id) }}"
+                                                        class="btn btn-danger btn-sm btn-delete">Update Status</a>
                                                 </td>
                                             </tr>
                                         @endforeach

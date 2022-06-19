@@ -35,9 +35,8 @@
                             <div class="card-header">
                                 <div class="row">
                                     <h3 class="card-title my-auto">Data Produk</h3>
-                                    <a href="/addproduct">
-                                        <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
-                                            Produk</button>
+                                    <a href="{{route('addproduct')}}">
+                                        <button class="btn btn-sm btn-success" style="margin-left: 770px;">Tambah Produk</button>
                                     </a>
                                 </div>
                             </div>

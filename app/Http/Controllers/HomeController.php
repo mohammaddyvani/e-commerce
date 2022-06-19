@@ -72,17 +72,9 @@ class HomeController extends Controller
         return view('detailproduct', $data);
     }
 
-    // public function cart(){
-    //     $data = [
-    //         'products' => Product::all(),
-    //     ];
-    //     return view('cart', $data);
-    // }
-
-
     public function checkout()
     {
-        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
+        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
             'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
@@ -96,9 +88,9 @@ class HomeController extends Controller
     public function insertaddress(Request $request){
         $request->merge(['name' => $request->firstname .' '. $request->lastname]);
         $address = Address::create($request->only(['name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone']));
-        Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->update([
+        Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending'])->update([
             'id_address' => $address->id,
-            'status' => 'packed',
+            'status' => 'Packing',
             'total_price' => $request->total_price,
             'total_payment' => $request->total_payment
         ]);
@@ -132,7 +124,7 @@ class HomeController extends Controller
 
     public function cart()
     {
-        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
+        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
             'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
@@ -143,7 +135,7 @@ class HomeController extends Controller
 
     public function bigcart()
     {
-        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending'])->first();
+        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending'])->first();
         $data = [
             'count' => !is_null($transaction) ? $transaction->detailTransaction->count() : 0,
             'data' => !is_null($transaction) ? $transaction->detailTransaction()->with('product')->get() : [],
@@ -154,14 +146,14 @@ class HomeController extends Controller
     public function addToCart($id)
     {
         try {
-            $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'pending']);
+            $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending']);
 
             if ($transaction->count() > 0) {
                 $transaction = $transaction->first();
             } else {
                 $transaction = Transaction::create([
                     'id_user' => Auth::user()->id,
-                    'status' => 'pending'
+                    'status' => 'Pending'
                 ]);
             }
 
@@ -219,6 +211,32 @@ class HomeController extends Controller
         }
     }
 
+    public function cancelorder($id)
+    {
+        try {
+            Transaction::findOrFail($id)->delete();
+
+            return redirect()->back();
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function orderconfirmation($id){
+        try{
+            $order = Transaction::findOrFail($id);
+            $order->update([
+                'status' => 'Delivered'
+            ]);
+
+            return redirect()->back();
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
     public function updateQty(Request $request, $id)
     {
         try {
@@ -236,7 +254,7 @@ class HomeController extends Controller
     public function myaccount(){
         $data = [
             'user' => User::where('id', Auth::user()->id)->first(),
-            'default_address' => Address::where('id', Auth::user()->id)->latest(),
+            // 'default_address' => Address::where('id', Auth::user()->id)->latest(),
             'transaction' => Transaction::where(['id_user' => Auth::user()->id])->get(),
 
         ];
@@ -244,27 +262,6 @@ class HomeController extends Controller
         return view('myaccount', $data);
     }
 
-    public function changepassword(Request $request){
-        $user = Auth::user();
-        
-        $request->validate([
-            'newpassword' => 'required',
-            'confrimnewpassword' => 'required|same:newpassword',
-        ]);
-
-        if(Hash::check($request->oldpassword, $user->password)){
-            $user->update([
-                'password' => Hash::make($request->newpassword),
-            ]);
-            return redirect()->back()->with('success', 'Password berhasil diubah');
-        }else{
-            return redirect()->back()->with('error', 'Password lama tidak sesuai');
-        }
-
-        return redirect()->back();
-    }
-
-    //Ganti Password V2
     // public function changepassword(Request $request){
     //     $user = Auth::user();
         
@@ -274,19 +271,48 @@ class HomeController extends Controller
     //     ]);
 
     //     if(Hash::check($request->oldpassword, $user->password)){
-    //         try {
-    //             User::where('id', $user->id)->update([
-    //                 'password' => Hash::make($request->newpassword),
-    //             ]);
-                
-    //             return redirect()->back()->with('success', 'Password berhasil diubah');
-    //         } catch(Exception $e){
-    //             return redirect()->back()->withErrors(['error' => 'Opps! error blokkk']);
-    //         }
+    //         $user->update([
+    //             'password' => Hash::make($request->newpassword),
+    //         ]);
+    //         return redirect()->back()->with('success', 'Password berhasil diubah');
     //     }else{
-    //         return redirect()->back()->withErrors(['error' => 'Password lama tidak sesuai']);
+    //         return redirect()->back()->with('error', 'Password lama tidak sesuai');
     //     }
 
     //     return redirect()->back();
     // }
+
+    //Ganti Password V2
+    public function changepassword(Request $request){
+        $user = Auth::user();
+        
+        $request->validate([
+            'newpassword' => 'required',
+            'confrimnewpassword' => 'required|same:newpassword',
+        ]);
+
+        if(Hash::check($request->oldpassword, $user->password)){
+            try {
+                User::where('id', $user->id)->update([
+                    'password' => Hash::make($request->newpassword),
+                ]);
+                
+                return redirect()->back()->with('success', 'Password berhasil diubah');
+            } catch(Exception $e){
+                return redirect()->back()->withErrors(['error' => 'Opps! error blokkk']);
+            }
+        }else{
+            return redirect()->back()->withErrors(['error' => 'Password lama tidak sesuai']);
+        }
+
+        return redirect()->back();
+    }
+
+    public function aboutus(){
+        return view('aboutus');
+    }
+
+    public function contactus(){
+        return view('contactus');
+    }
 }

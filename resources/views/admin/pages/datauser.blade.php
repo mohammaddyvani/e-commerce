@@ -29,9 +29,8 @@
                             <div class="card-header">
                                 <div class="row">
                                     <h3 class="card-title my-auto">Data User</h3>
-                                    <a href="adduser">
-                                        <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
-                                            User</button>
+                                    <a href="{{ route('adduser') }}">
+                                        <button class="btn btn-sm btn-success" style="margin-left: 807px;">Tambah User<i class="fas fa-user-plus ml-2"></i></button>
                                     </a>
                                 </div>
                             </div>

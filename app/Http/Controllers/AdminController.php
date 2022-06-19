@@ -156,11 +156,21 @@ class AdminController extends Controller
     public function dataselling()
     {
         $data = [
-            DetailTransaction::all(),
-            Address::all(),
             'transactions' => Transaction::all(),
         ];
         return view('admin.pages.transaction.datapenjualan', $data);
+    }
+
+    public function detailorder($id)
+    {
+        $data = [
+            // 'transactions' => Transaction::find($id),
+            // 'details' => DetailTransaction::where('id_transaction', $id)->get(),
+            // 'addresses' => Transaction::find($id)->address,
+            'detail' => Transaction::where('id', $id)->get(),
+            User::all(),
+        ];
+        return view('admin.pages.transaction.detailorder', $data);
     }
 }
 

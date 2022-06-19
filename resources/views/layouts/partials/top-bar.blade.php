@@ -216,7 +216,7 @@
                 <a href="{{ route('bigcart') }}" class="uren-btn uren-btn_dark uren-btn_fullwidth">Minicart</a>
             </div>
             <div class="minicart-btn_area">
-                <a href="checkout" class="uren-btn uren-btn_dark uren-btn_fullwidth">Checkout</a>
+                <a href="{{ route('checkout') }}" class="uren-btn uren-btn_dark uren-btn_fullwidth">Checkout</a>
             </div>
         </div>
     </div>

@@ -57,11 +57,6 @@
                                         <textarea rows="2" name="address" class="form-control"></textarea>
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-12">
-                                    <div class="checkout-form-list">
-                                        <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
-                                    </div>
-                                </div> --}}
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Town / City <span class="required">*</span></label>
