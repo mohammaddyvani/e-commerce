@@ -74,17 +74,23 @@ Route::middleware(['auth.admin', 'auth'])->group(function(){
     Route::get('admin', [AdminController::class, 'admin'])->name('admin');
     Route::get('datauser', [AdminController::class, 'datauser'])->name('datauser');
     Route::get('dataselling', [AdminController::class, 'dataselling'])->name('dataselling');
+    Route::get('riwayattransaction', [AdminController::class, 'riwayattransaksi'])->name('riwayattransaksi');
     Route::get('addproduct', [AdminController::class, 'addproduct'])->name('addproduct');
     Route::get('adduser', [AdminController::class, 'adduser'])->name('adduser');
     Route::get('editproduct/{id}', [AdminController::class, 'editproduct'])->name('editproduct');
     Route::get('edituser/{id}', [AdminController::class, 'edituser'])->name('edituser');
     Route::get('detailorder/{id}', [AdminController::class, 'detailorder'])->name('detailorder');
-    Route::post('/insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
-    Route::post('/insertuser', [AdminController::class, 'insertuser'])->name('insertuser');
-    Route::post('/updateproduct/{id}', [AdminController::class, 'updateproduct'])->name('updateproduct');
+    Route::get('restockproduct', [AdminController::class, 'restockproduct'])->name('restockproduct');
+    Route::get('addrestock', [AdminController::class, 'addrestock'])->name('addrestock');
+    Route::post('insertproduct', [AdminController::class, 'insertproduct'])->name('insertproduct');
+    Route::post('insertuser', [AdminController::class, 'insertuser'])->name('insertuser');
+    Route::post('updateproduct/{id}', [AdminController::class, 'updateproduct'])->name('updateproduct');
     Route::post('/updateuser/{id}', [AdminController::class, 'updateuser'])->name('updateuser');
+    Route::post('update-status-order/{id}', [AdminController::class, 'updateStatusOrder'])->name('update-status-order');
+    Route::post('insertrestock', [AdminController::class, 'insertrestock'])->name('insertrestock');
     Route::delete('/deleteproduct/{id}', [AdminController::class, 'delete'])->name('deleteproduct');
     Route::delete('/deleteuser/{id}', [AdminController::class, 'deleteuser'])->name('deleteuser');
+    Route::delete('deleteriwayat/{id}', [AdminController::class, 'deleteriwayat'])->name('delete-riwayat');
 });
 
 //Auth

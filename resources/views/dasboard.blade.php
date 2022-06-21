@@ -16,6 +16,7 @@
                             <div class="single-slide animation-style-02 bg-2">
                                 <img src="assets/images/slider/2.jpg" alt="">
                             </div>
+                            <!-- Single Slide Area End Here -->
                     </div>
                 </div>
             </div>
@@ -42,7 +43,13 @@
                                                     {"breakpoint":767, "settings": {"slidesToShow": 1}},
                                                     {"breakpoint":480, "settings": {"slidesToShow": 1}}
                                                 ]'>
+                                                @php
+                                                $newPrice = 0;   
+                                               @endphp
                         @foreach ($new_products as $item)
+                        @php
+                        $newPrice = $item->price - $item->discount;
+                    @endphp
                             <div class="product-slide_item">
                                 <div class="inner-slide">
                                     <div class="single-product">
@@ -84,7 +91,7 @@
                                                         href="single-product.html">{{ $item['name'] }}</a></h6>
                                                 <div class="price-box">
                                                     <span
-                                                        class="new-price">Rp. {{ number_format($item->price, 0, ',', '.') }}</span>
+                                                        class="new-price">Rp. {{ number_format($newPrice, 0, ',', '.') }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -114,7 +121,13 @@
                             }' data-slick-responsive='[
                                                     {"breakpoint":768, "settings": {"slidesToShow": 1}}
                                                 ]'>
-                            @foreach ($new_products as $item)
+                                                @php
+                                                 $newPrice = 0;   
+                                                @endphp
+                            @foreach ($products_discount as $item)
+                            @php
+                                $newPrice = $item->price - $item->discount;
+                            @endphp
                             <div class="slide-item">
                                 <div class="inner-slide">
                                     <div class="single-product">
@@ -133,7 +146,7 @@
                                                 <div class="uren-countdown_area">
                                                     <span class="product-offer">Hurry up! Offer ends in:</span>
                                                     <div class="countdown-wrap">
-                                                        <div class="countdown item-4" data-countdown="2022/06/14"
+                                                        <div class="countdown item-4" data-countdown="2022/06/23"
                                                             data-format="short">
                                                             <div class="countdown__item">
                                                                 <span class="countdown__time daysLeft"></span>
@@ -165,8 +178,8 @@
                                                 </div>
                                                 <h6 class="product-name"><a href="single-product.html">{{ $item['name'] }}</a></h6>
                                                 <div class="price-box">
-                                                    <span class="new-price new-price-2">Rp. {{ number_format($item->price, 0, ',', '.') }}</span>
-                                                    <span class="old-price">Rp10,000,000</span>
+                                                    <span class="new-price new-price-2">Rp. {{ number_format($newPrice, 0, ',', '.') }}</span>
+                                                    <span class="old-price">Rp. {{ number_format($item->price, 0, ',', '.') }}</span>
                                                 </div>
                                                 <div class="add-actions">
                                                     <ul>

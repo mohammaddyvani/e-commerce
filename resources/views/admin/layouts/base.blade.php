@@ -224,7 +224,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="/admin" class="nav-link active">
+                            <a class="nav-link">
                                 <i class="nav-icon fas fa-th-large"></i>
                                 <p>
                                     Master Data
@@ -233,27 +233,27 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin" class="nav-link">
+                                    <a href="{{ route('admin') }}" class="nav-link">
                                         <i class="nav-icon fas fa-file-alt active"></i>
                                         <p>Data Produk</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/datauser" class="nav-link">
+                                    <a href="{{ route('datauser') }}" class="nav-link">
                                         <i class="nav-icon fas fa-user"></i>
                                         <p>Data User</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/datatransaction" class="nav-link">
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('datatransaction') }}" class="nav-link">
                                         <i class="nav-icon fas fa-hand-holding-usd"></i>
                                         <p>Data Transaksi</p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin" class="nav-link">
+                            <a class="nav-link">
                                 <i class="nav-icon fas fa-donate"></i>
                                 <p>
                                     Transaksi
@@ -268,9 +268,15 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/datauser" class="nav-link">
+                                    <a href="{{ route('restockproduct') }}" class="nav-link">
                                         <i class="nav-icon fas fa-shopping-bag"></i>
                                         <p>Pembelian</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('riwayattransaksi') }}" class="nav-link">
+                                        <i class="nav-icon fas fa-history"></i>
+                                        <p>Riwayat</p>
                                     </a>
                                 </li>
                             </ul>

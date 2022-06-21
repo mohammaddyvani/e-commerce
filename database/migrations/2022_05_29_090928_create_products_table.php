@@ -30,6 +30,7 @@ return new class extends Migration
             $table->integer("stock");
             $table->integer("discount");
             $table->string("image");
+            $table->date("release_date")->nullable();
             $table->timestamps();
             $table->foreign('brand_id')->references('id')->on('brands');
         });

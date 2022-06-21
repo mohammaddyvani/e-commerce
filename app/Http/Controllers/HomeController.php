@@ -37,9 +37,8 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'new_products' => Product::orderBy('id')->take(8)->get(),
-            'products' => Product::orderBy('created_at', 'desc')->take(8)->get(),
-
+            'new_products' => Product::orderBy('release_date', 'desc')->take(8)->get(),
+            'products_discount' => Product::where('discount', '>', 0)->take(8)->get(),
         ];
         return view('dasboard', $data);
     }
@@ -88,9 +87,18 @@ class HomeController extends Controller
     public function insertaddress(Request $request){
         $request->merge(['name' => $request->firstname .' '. $request->lastname]);
         $address = Address::create($request->only(['name', 'address', 'city', 'districts', 'province', 'country', 'postal_code', 'email', 'phone']));
-        Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending'])->update([
+        $transaction = Transaction::where(['id_user' => Auth::user()->id, 'status' => 'Pending']);
+        
+        foreach($transaction->first()->detailTransaction as $detail){
+            Product::where('id', $detail->id_product)->update([
+                'stock' => $detail->product->stock - $detail->quantity,
+            ]);
+        }
+
+        $transaction->update([
             'id_address' => $address->id,
             'status' => 'Packing',
+            'paymet_method' => $request->paymet_method,
             'total_price' => $request->total_price,
             'total_payment' => $request->total_payment
         ]);
@@ -214,6 +222,7 @@ class HomeController extends Controller
     public function cancelorder($id)
     {
         try {
+            DetailTransaction::where('id_transaction', $id)->delete();
             Transaction::findOrFail($id)->delete();
 
             return redirect()->back();

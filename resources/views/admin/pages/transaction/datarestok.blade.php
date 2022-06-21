@@ -12,7 +12,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                            <li class="breadcrumb-item active">Data Penjualan</li>
+                            <li class="breadcrumb-item active">Pembelian</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -28,11 +28,11 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <h3 class="card-title my-auto">Data Penjualan</h3>
-                                    {{-- <a href="/addproduct">
-                                        <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
+                                    <h3 class="card-title my-auto">Pembelian / Restok Produk</h3>
+                                    <a href="{{ route('addrestock') }}">
+                                        <button class="btn btn-sm btn-success" style="margin-left: 880px;">Restok
                                             Produk</button>
-                                    </a> --}}
+                                    </a>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -40,43 +40,20 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr class="text-center">
-                                            <th>Id</th>
-                                            <th>Nama Pembeli</th>
+                                            <th>Tanggal</th>
                                             <th>Nama Produk</th>
                                             <th>Jumlah</th>
-                                            <th>Alamat</th>
-                                            <th>Pembayaran</th>
-                                            <th>Status</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($transactions as $item)
+                                        @foreach ($restock as $item)
                                             <tr>
-                                                <td class="text-center" style="vertical-align: middle">{{ $item->id }}</td>
-                                                <td style="vertical-align: middle">{{ $item->address->name }}</td>
-                                                <td style="vertical-align: middle">
-                                                    @foreach ($item->detailTransaction as $product)
-                                                        <li style="text-align: left">{{ $product->product->name }}</li>
-                                                    @endforeach
-                                                </td>
-                                                <td style="vertical-align: middle">
-                                                    @foreach ($item->detailTransaction as $product)
-                                                        <li>{{ $product->quantity }} pcs</li>
-                                                    @endforeach
-                                                </td>
-                                                <td style="vertical-align: middle">{{ $item->address->address . ' , ' . $item->address->districts . ' , ' . $item->address->city . ' , ' . $item->address->province . ' , ' . $item->address->country }}
-                                                </td>
-                                                <td class="text-center" style="vertical-align: middle">{{ $item->paymet_method }}</td>
-                                                <td class="text-center" style="vertical-align: middle">{{ $item->status }}</td>
                                                 <td class="text-center" style="vertical-align: middle">
-                                                    <a href="{{ route('detailorder', $item->id) }}"
-                                                        class="btn btn-warning btn-sm" style="width: 30px; height: 30px;"><i class="fas fa-info"></i></a>
-                                                    
-                                                    @if ($item->status != 'Shipping')
-                                                    <a href="{{ route('update-status-order', $item->id) }}"
-                                                        class="btn btn-success btn-sm" style="width: 30px; height: 30px;"><i class="fas fa-arrow-up"></i></a>
-                                                    @endif
+                                                    {{ date('d M Y', strtotime($item->created_at)) }}
+                                                <td class="text-center" style="vertical-align: middle">
+                                                    {{ $item->product->name }}</td>
+                                                <td class="text-center" style="vertical-align: middle">
+                                                    {{ $item->quantity }} PCS</td>
                                                 </td>
                                             </tr>
                                         @endforeach

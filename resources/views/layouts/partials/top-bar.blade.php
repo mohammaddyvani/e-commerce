@@ -7,9 +7,9 @@
                     <div class="main-menu_area position-relative">
                         <nav class="main-nav">
                             <ul>
-                                <li class="dropdown-holder"><a href="/">Home</a>
+                                <li class="dropdown-holder"><a href="{{ route('home') }}">Home</a>
                                 </li>
-                                <li class="megamenu-holder "><a href="#">Shop <i
+                                <li class="megamenu-holder "><a>Shop <i
                                             class="ion-ios-arrow-down"></i></a>
                                     <ul class="hm-megamenu" style="width: auto">
                                         <li><span class="megamenu-title">Category</span>
@@ -26,8 +26,8 @@
                                 </li>
                             </ul>
                             </li>
-                            <li class=""><a href="aboutus">About Us</a></li>
-                            <li class=""><a href="contact">Contact</a></li>
+                            <li class=""><a href="{{ route('aboutus') }}">About Us</a></li>
+                            <li class=""><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -171,7 +171,7 @@
                                     <option value="{{ route('products', $item->name) }}">{{ $item->name }}
                                     </option>
                                 @endforeach
-                                <option value="16">Accessories</option>
+                                <option value="{{ route('category', 'accessories') }}">Accessories</option>
                             </select>
                             <input type="text" placeholder="Enter your search key ...">
                             <button class="header-search_btn" type="submit"><i
@@ -237,89 +237,20 @@
                         <li class="menu-item-has-children"><a href="/"><span class="mm-text">Home</span></a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="shop-left-sidebar.html">
+                            <a href="#">
                                 <span class="mm-text">Shop</span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="shop-left-sidebar.html">
-                                        <span class="mm-text">Brands</span>
-                                    </a>
-                                    <ul class="sub-menu">
+                                <li class="menu-item-has-children"><span class="megamenu-title">Category</span>
+                                    <ul>
                                         <li>
-                                            <a href="shop-grid-fullwidth.html">
-                                                <span class="mm-text">Oppo</span>
-                                            </a>
+                                            <a href="{{ route('category', 'smartphone') }}">Smartphone</a>
                                         </li>
                                         <li>
-                                            <a href="shop-4-column.html">
-                                                <span class="mm-text">Samsung</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar.html">
-                                                <span class="mm-text">Xiaomi</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-right-sidebar.html">
-                                                <span class="mm-text">Realme</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-right-sidebar.html">
-                                                <span class="mm-text">Infinix</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-right-sidebar.html">
-                                                <span class="mm-text">OnePlus</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-right-sidebar.html">
-                                                <span class="mm-text">Vivo</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-right-sidebar.html">
-                                                <span class="mm-text">Apple</span>
-                                            </a>
+                                            <a href="{{ route('category', 'accessories') }}">Accessories</a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="shop-list-left-sidebar.html">
-                                        <span class="mm-text">Accessories</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="shop-list-fullwidth.html">
-                                                <span class="mm-text">Calbe</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-list-left-sidebar.html">
-                                                <span class="mm-text">Earphone</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-list-right-sidebar.html">
-                                                <span class="mm-text">Headphone</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-list-right-sidebar.html">
-                                                <span class="mm-text">Charger</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-list-right-sidebar.html">
-                                                <span class="mm-text">Case</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                </li>                               
                             </ul>
                         </li>
                     </ul>

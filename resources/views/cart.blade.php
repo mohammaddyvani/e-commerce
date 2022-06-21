@@ -20,8 +20,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php $subtotal = 0; @endphp
+                                @php $subtotal = 0; $newPrice = 0; $totalDiscount = 0; $newTotal = 0; @endphp
                                 @foreach ($data as $item)
+                                @php $newPrice = $item->price - $item->product->discount; @endphp
                                 <tr>
                                     <td class="uren-product-remove">
                                         <form action="{{ route('remove-from-bigcart', $item->id) }}" method="post">
@@ -32,7 +33,7 @@
                                     </td>
                                     <td class="uren-product-thumbnail"><a><img src="{{ asset('assets/images/product/' . $item->product->image) }}" alt="Uren's Cart Thumbnail"></a></td>
                                     <td class="uren-product-name"><a style="color: #343A40">{{ $item->product->name }}</a></td>
-                                    <td class="uren-product-price"><span class="amount">Rp. {{ number_format($item->price, 0, ',', '.') }}</span></td>
+                                    <td class="uren-product-price"><span class="amount">Rp. {{ number_format($item->product->price, 0, ',', '.') }}</span></td>
                                     <td class="quantity" width="200">
                                         <form action="{{ route('update-qty', $item->id) }}" method="post">
                                             @csrf
@@ -45,21 +46,15 @@
                                         </form>
                                     </td>
                                     <td class="product-subtotal"><span class="amount">Rp. {{ number_format($item->price * $item->quantity, 0 ,',', '.') }}</span></td>
-                                    @php $subtotal += $item['price'] * $item->quantity; @endphp
+                                    @php 
+                                    $subtotal += $item->price * $item->quantity; 
+                                    $totalDiscount += $item->product->discount * $item->quantity; 
+                                    $newTotal = $subtotal - $totalDiscount; 
+                                    @endphp
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="coupon-all">
-                                <div class="coupon">
-                                    <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
-                                    <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-5 ml-auto">
@@ -67,8 +62,8 @@
                                 <h2>Cart totals</h2>
                                 <ul>
                                     <li>Subtotal <span>Rp. {{ number_format($subtotal, 0, ',', '.') }}</span></li>
-                                    <li>Diskon <span>Rp. 0</span></li>
-                                    <li>Total <span>Rp. {{ number_format($subtotal, 0, ',', '.') }}</span></li>
+                                    <li>Diskon <span>Rp. {{ number_format($totalDiscount, 0, ',', '.') }}</span></li>
+                                    <li>Total <span>Rp. {{ number_format($newTotal, 0, ',', '.') }}</span></li>
                                 </ul>
                                 <a href="{{ route('checkout')}}">Proceed to checkout</a>
                             </div>

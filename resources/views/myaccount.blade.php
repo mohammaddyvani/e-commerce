@@ -58,6 +58,7 @@
                                                     <th>TOTAL</th>
                                                     <th></th>
                                                 </tr>
+
                                                 @foreach ($transaction as $item)
                                                     <tr>
                                                         <td><a class="account-order-id">{{ $item->id }}</a></td>
@@ -66,13 +67,12 @@
                                                         <td>
                                                             <ol>
                                                                 @foreach ($item->detailTransaction as $i)
-                                                                    <li>{{ $i->product->name }} ({{ $i->quantity }} pcs)
-                                                                    </li>
+                                                                    <li style="text-align: left ">{{ $i->product->name }} ({{ $i->quantity }} pcs)</li>
                                                                 @endforeach
                                                             </ol>
                                                         </td>
                                                         <td>{{ $item->status }}</td>
-                                                        <td>Rp. {{ number_format($item->total_price, 0, ',', '.') }}</td>
+                                                        <td>Rp. {{ number_format($item->total_payment, 0, ',', '.') }}</td>
                                                         <td>
                                                             @if ($item->status == 'Packing')
 

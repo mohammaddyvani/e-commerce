@@ -19,5 +19,10 @@ class Product extends Model
         return $this->hasMany(DetailTransaction::class);
     }
 
+    public function restock()
+    {
+        return $this->hasMany(Restock::class);
+    }
+
     protected $guarded = [];
 }

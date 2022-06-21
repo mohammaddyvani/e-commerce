@@ -14,6 +14,7 @@ async function loadCart(){
 
         var render = ``
         var subtotal = 0
+        var totaldiscount = 0
         $.each(data.data, function(key, val){
             render += `
                     <li class="minicart-product">
@@ -23,15 +24,16 @@ async function loadCart(){
                         </div>
                         <div class="product-item_content">
                             <a class="product-item_title" href="shop-left-sidebar.html">${val.product.name}</a>
-                            <span class="product-item_quantity">${val.quantity} x Rp. ${number_format(parseInt(val.product.price))}</span>
+                            <span class="product-item_quantity">${val.quantity} x Rp. ${number_format(parseInt(val.product.price - val.product.discount))}</span>
                         </div>
                     </li>`
 
-            subtotal += parseInt(val.product.price) * parseInt(val.quantity)
-        })
-
+                    subtotal += parseInt(val.product.price) * parseInt(val.quantity)
+                    totaldiscount += parseInt(val.product.discount) * parseInt(val.quantity)
+                })
+                
         $('.minicart-list').html(render)
-        $('#subtotal').html(`Rp. ${number_format(subtotal)}`)
+        $('#subtotal').html(`Rp. ${number_format(subtotal - totaldiscount)}`)
 
         $('.remove-from-cart').unbind().on('click', async function(e){
             e.preventDefault()

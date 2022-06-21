@@ -12,7 +12,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                            <li class="breadcrumb-item active">Data Penjualan</li>
+                            <li class="breadcrumb-item active">Riwayat Transaksi</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -28,11 +28,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <h3 class="card-title my-auto">Data Penjualan</h3>
-                                    {{-- <a href="/addproduct">
-                                        <button class="btn btn-sm btn-success" style="margin-left: 780px;">Tambah
-                                            Produk</button>
-                                    </a> --}}
+                                    <h3 class="card-title my-auto">Riwayat Transaksi</h3>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -72,11 +68,7 @@
                                                 <td class="text-center" style="vertical-align: middle">
                                                     <a href="{{ route('detailorder', $item->id) }}"
                                                         class="btn btn-warning btn-sm" style="width: 30px; height: 30px;"><i class="fas fa-info"></i></a>
-                                                    
-                                                    @if ($item->status != 'Shipping')
-                                                    <a href="{{ route('update-status-order', $item->id) }}"
-                                                        class="btn btn-success btn-sm" style="width: 30px; height: 30px;"><i class="fas fa-arrow-up"></i></a>
-                                                    @endif
+                                                    <a href="{{ route('delete-riwayat', $item->id) }}" class="btn btn-danger btn-sm btn-delete " style="width: 30px; height: 30px;"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -92,10 +84,40 @@
         </section>
         <!-- /.content -->
     </div>
+
+    <div class="modal fade" id="modal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="" method="post" class="d-inline">
+                    @csrf
+                    @method('delete')
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hapus Riwayat Transaksi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Apakah anda yakin ingin menghapus riwayat transaksi ini?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
     <script>
+        $('.btn-delete').click(function(e) {
+            e.preventDefault();
+            var action = $(this).attr('href');
+            $('form').attr('action', action);
+            $('#modal').modal('show');
+        });
         $(function() {
             $("#example1").DataTable({
                 "responsive": true,

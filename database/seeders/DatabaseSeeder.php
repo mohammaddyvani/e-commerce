@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             DetailTransactionSeeder::class,
             HotDealSeeder::class,
             HotDealDetailSeeder::class,
+            RestockSeeder::class,
 
         ]);
 

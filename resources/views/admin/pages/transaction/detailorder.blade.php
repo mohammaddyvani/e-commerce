@@ -27,35 +27,76 @@
                                             <input type="text" value="{{ $item->id_user }}" class="form-control" disabled readonly>
                                         </div>
                                     </div>
-                                    {{-- </div> --}}
-                                    <div class="mb-3">
-                                        <label class="form-label">Alamat Pengiriman</label>
-                                        <textarea rows="3" class="form-control" disabled readonly>{{ $item->address->address . ' , ' . $item->address->districts . ' , ' . $item->address->city . ' , ' . $item->address->province . ' , ' . $item->address->country }}</textarea>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12 mb--20">
+                                            <label>Alamat</label>
+                                            <textarea rows="2" class="form-control" disabled readonly>{{ $item->address->address . ' , ' . $item->address->districts . ' , ' . $item->address->city . ' , ' . $item->address->province . ' , ' . $item->address->country }}</textarea>
+                                        </div>
+                                        <div class="col-md-6 col-12 mb--20">
+                                            <label>No. Telp</label>
+                                            <input type="text" value="{{ $item->address->phone }}" class="form-control" disabled readonly>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12 mb--20">
+                                            <label>Jenis Pembayaran</label>
+                                            <input type="text" value="{{ $item->paymet_method }}" class="form-control" disabled readonly>
+                                        </div>
+                                        <div class="col-md-6 col-12 mb--20">
+                                            <label>Status</label>
+                                            <input type="text" value="{{ $item->status }}" class="form-control" disabled readonly>
                                     </div>
-                                    @endforeach
-                                    {{-- <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" name="password" id="password" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Konfirmasi Password</label>
-                                        <input type="password" name="confirm_password" placeholder="Konfirmasi Password" class="form-control">
-                                    </div> --}}
-                                    {{-- <div class="mb-3">
-                                        <label for="selectrole" class="form-label">Role</label>
-                                        <select class="form-select form-control" name="role_id"
-                                            aria-label="Default select example">
-                                            <option selected>Select Role</option>
-                                            @foreach ($roles as $item)
-                                                <option value="{{ $item->id }}"
-                                                {{ isset($users) && $users->role_id == $item->id ? 'Selected' : '' }}>
-                                                {{ $item->name }}</option>
+                                    <table class="table mt-3">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th class="uren-product-thumbnail">Foto Produk</th>
+                                                <th class="cart-product-name">Nama Produk</th>
+                                                <th class="uren-product-price">Harga</th>
+                                                <th class="uren-product-quantity">Jumlah</th>
+                                                <th>Diskon</th>
+                                                <th class="uren-product-subtotal">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php
+                                            $total = 0;
+                                            $discount = 0;
+                                            $subtotal = 0;
+                                        @endphp
+                                            @foreach ($item->detailTransaction as $i)
+                                                @php
+                                                    $discount = $i->product->discount * $i->quantity;
+                                                    $total = ($i->product['price'] * $i->quantity) - $discount;
+                                                    $subtotal += $total;
+                                                @endphp
+                                            <tr class="text-center">
+                                                <td class="uren-product-thumbnail">
+                                                    <img src="{{ asset('assets/images/product/' . $i->product->image) }}" width="100px">
+                                                </td>
+                                                <td style="vertical-align: middle">{{ $i->product->name }}</td>
+                                                <td style="vertical-align: middle">Rp. {{ number_format($i->product->price, 0 ,',', '.') }}</td>
+                                                <td style="vertical-align: middle">{{ $i->quantity }}</td>
+                                                <td style="vertical-align: middle">Rp. {{ number_format($discount, 0 ,',', '.') }}</td>
+                                                <td style="vertical-align: middle">Rp. {{ number_format($total, 0,',', '.') }}</td>
+                                            </tr>
                                             @endforeach
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <a class="btn btn-secondary" href="/datauser" role="button">Cancle</a> --}}
-                                {{-- </form> --}}
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <th class="text-center">Subtotal</th>
+                                                <th class="text-center">:</th>
+                                                <th class="text-center">Rp. {{ number_format($subtotal, 0,',', '.') }}</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="{{ route('dataselling') }}" class="btn btn-secondary ml-2">Kembali</a>
+                                    @if (!in_array($item->status, ['Shipping', 'Cancel', 'Delivered']))
+                                    <form action="{{ route('update-status-order', $item->id) }}" method="post">
+                                        @csrf
+                                    <button type="submit" class="btn btn-success ml-2">Proses Pengiriman</button>
+                                    </form>
+                                    @endif
+                                    @endforeach
                             </div>
                             <!-- /.card-body -->
                         </div>

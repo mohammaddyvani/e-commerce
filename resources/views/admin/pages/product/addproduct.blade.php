@@ -56,7 +56,7 @@
                                         <label for="selectcatalog" class="form-label">Category</label>
                                         <select class="form-select form-control" name="catalog"
                                             aria-label="Default select example">
-                                            <option selected>Select Category</option>
+                                            <option>Select Category</option>
                                             <option value="accessories" {{ isset($products) && $products->catalog == 'accessories' ? 'Selected' : '' }}>Accessoris</option>
                                             <option value="smartphone" {{ isset($products) && $products->catalog == 'smartphone' ? 'Selected' : '' }}>Smartphone</option>
                                         </select>

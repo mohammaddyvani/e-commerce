@@ -84,13 +84,13 @@
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Email Address <span class="required">*</span></label>
-                                        <input placeholder="" type="email" name="email">
+                                        <input type="email" name="email">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text" name="phone">
+                                        <input type="number" name="phone" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                                                         class="amount">Rp. {{ number_format($item->price * $item->quantity, 0, ',', '.') }}</span></td>
                                                 @php
                                                     $subtotal += $item['price'] * $item->quantity;
-                                                    $discount += $item->product->discount;
+                                                    $discount += $item->product->discount * $item->quantity;
                                                     $totalpay = $subtotal - $discount;
                                                 @endphp
                                             </tr>
